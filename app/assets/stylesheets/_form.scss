@@ -21,4 +21,14 @@ form {
     font-size: 12px;
     font-weight: bold;
   }
+
+  .img-preview {
+    margin-bottom: $mediumSpacing;
+    margin-right: $mediumSpacing;
+  }
+
+  .image-section {
+    label { width: 100%; }
+    text-align: center;
+  }
 }

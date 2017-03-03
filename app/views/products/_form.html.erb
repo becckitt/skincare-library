@@ -11,8 +11,9 @@
     <%= f.label :effective %> <br>
     <%= f.select :effective, [['Yes', true], ['No', false]] %>
   </p>
-  <p>
+  <p class="image-section">
     <%= f.label :photo %> <br>
+    <%= image_tag @product.photo.url(:thumb), class: "img-preview" if @product.photo_file_name? %><br>
     <%= f.file_field :photo %>
   </p>
   <p>
