@@ -10,9 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+ @import '_variables';
+ @import '_form';
+ @import 'product';
+ @import 'product_show';
 
  body {
     font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
@@ -21,3 +25,27 @@
  h1, h2 {
   text-align: center;
  }
+
+ .link {
+  background: $lightGray;
+  border-bottom: 3px solid $fuchsia;
+  margin: $mediumSpacing auto;
+  max-width: 125px;
+  min-width: 100px;
+  padding: 15px 10px;
+  transition: all .5s;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  &:hover {
+    background: whitesmoke;
+  }
+
+  &--blue {
+    border-bottom: 3px solid $cyan;
+  }
+}

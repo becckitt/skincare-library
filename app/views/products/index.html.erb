@@ -1,6 +1,6 @@
 <div class="main-header">
   <h1 class="main-header--text">Skincare Index</h1>
-  <div class="new-link">
+  <div class="link">
     <%= link_to 'New product', new_product_path %>   
   </div>
 </div>
@@ -17,8 +17,8 @@
     </tr>
     <% @product_collection.good_products.each do |product| %>
       <tr>
-        <td class="skincare-image"><%= image_tag product.photo.url(:thumb) %></td>
-        <td><%= product.name %></td>
+        <td><%= image_tag product.photo.url(:thumb) %></td>
+        <td class="name-link"><%= link_to product.name, product_path(product.id) %></td>
         <td><%= product.comment %></td>
         <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
         <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
@@ -37,8 +37,8 @@
     </tr>
     <% @product_collection.bad_products.each do |product| %>
       <tr>
-        <td class="skincare-image"><%= image_tag product.photo.url(:thumb) %></td>
-        <td><%= product.name %></td>
+        <td><%= image_tag product.photo.url(:thumb) %></td>
+        <td class="name-link name-link--bad"><%= link_to product.name, product_path(product.id) %></td>
         <td><%= product.comment %></td>
         <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
         <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>

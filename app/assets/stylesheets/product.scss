@@ -1,20 +1,6 @@
-// spacing
-$fuckThat: 0px;
-$smallSpacing: 10px;
-$mediumSpacing: 20px;
-$largeSpacing: 40px;
-
-//colors
-$lightGray: #fbfbfb;
-$fuchsia: fuchsia;
-$cyan: cyan;
-
-//sizing
-$maxDocWidth: 1200px;
-
 .main-header {
   position: relative;
-  max-width: $maxDocWidth;
+  max-width: 450px;
   margin: 0 auto $largeSpacing auto;
   overflow: hidden;
   max-height: 100px;
@@ -55,25 +41,6 @@ $maxDocWidth: 1200px;
   }
 }
 
-.new-link {
-  background: $lightGray;
-  border-bottom: 3px solid $fuchsia;
-  margin: $mediumSpacing auto;
-  max-width: 125px;
-  padding: 15px 10px;
-  transition: all .5s;
-  text-align: center;
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  &:hover {
-    background: whitesmoke;
-  }
-}
-
 .list-container {
   max-width: $maxDocWidth;
   margin: 0 auto;
@@ -90,6 +57,33 @@ table {
     padding: $smallSpacing $largeSpacing;
     background: $lightGray;
     border-top: 2px solid $fuchsia;
+  }
+
+  .name-link {
+    a {
+      text-decoration: none;
+      color: black;
+      background: linear-gradient($fuchsia, $fuchsia);
+      background-size: 1px 1px;
+      background-repeat: repeat-x;
+      background-position: 0 98%;
+      text-shadow: 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+      transition: all .15s;
+
+      &:hover {
+        background-size: 1px 5px;
+        text-shadow: none;
+      }
+    }
+
+    &--bad {
+      a {
+        background: linear-gradient($cyan, $cyan);
+        background-size: 1px 1px;
+        background-repeat: repeat-x;
+        background-position: 0 98%;
+      }  
+    }
   }
 }
 

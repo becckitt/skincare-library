@@ -1,0 +1,10 @@
+<%= render 'back_button' %>
+<div class="product-display"> 
+  <h2><%= @product.name %></h2>
+  <%= image_tag @product.photo.url(:medium) %>
+  <p><%= @product.comment %></p>
+  <div class="links">
+    <div class="link"><%= link_to 'Edit', edit_product_path(@product.id) %></div>
+    <div class="link link--blue"><%= link_to 'Delete', product_path(@product.id), method: :delete, data: {confirm: "Delete?"} %></div>
+  </div>
+</div>

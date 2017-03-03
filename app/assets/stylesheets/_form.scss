@@ -1,0 +1,24 @@
+form {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  background: $lightGray;
+  padding: $mediumSpacing;
+
+  label {
+    margin-bottom: $mediumSpacing;
+    display: inline-block;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 3px solid $fuchsia;
+  }
+
+  input[type=submit] {
+    border: 3px solid $fuchsia;
+    font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}

@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     @product_collection = Product
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def create
     @product = Product.new(product_params)
 
