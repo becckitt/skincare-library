@@ -17,3 +17,7 @@
  body {
     font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
  }
+
+ h2 {
+  text-align: center;
+ }

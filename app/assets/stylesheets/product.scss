@@ -7,9 +7,15 @@ $largeSpacing: 40px;
 //colors
 $lightGray: #fbfbfb;
 $fuchsia: fuchsia;
+$cyan: cyan;
+
+.list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 table {
-  margin: $mediumSpacing fuckThat;
+  margin: $mediumSpacing auto;
 
   tr {
     margin: $mediumSpacing fuckThat;
@@ -19,6 +25,12 @@ table {
     padding: $smallSpacing $largeSpacing;
     background: $lightGray;
     border-top: 2px solid $fuchsia;
+  }
+}
+
+table.bad-products {
+  td {
+    border-top: 2px solid $cyan;
   }
 }
 
