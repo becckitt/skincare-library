@@ -1,0 +1,17 @@
+<%= form_for(@product) do |f| %>
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_area :name %>
+  </p>
+  <p>
+    <%= f.label :comment %> <br>
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.label :effective %> <br>
+    <%= f.select :effective, [['Yes', true], ['No', false]] %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

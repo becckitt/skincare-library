@@ -1,0 +1,37 @@
+<h2>Good products</h2>
+<table>
+  <tr class="labels">
+    <td>Product Name</td>
+    <td>Comment</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <% @product_collection.good_products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.comment %></td>
+      <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
+      <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Bad products</h2>
+<table>
+  <tr class="labels">
+    <td>Product Name</td>
+    <td>Comment</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <% @product_collection.bad_products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.comment %></td>
+      <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
+      <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New product', new_product_path %>

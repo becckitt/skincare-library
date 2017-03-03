@@ -1,0 +1,27 @@
+// spacing
+$fuckThat: 0px;
+$smallSpacing: 10px;
+$mediumSpacing: 20px;
+$largeSpacing: 40px;
+
+//colors
+$lightGray: #fbfbfb;
+$fuchsia: fuchsia;
+
+table {
+  margin: $mediumSpacing fuckThat;
+
+  tr {
+    margin: $mediumSpacing fuckThat;
+  }
+
+  td {
+    padding: $smallSpacing $largeSpacing;
+    background: $lightGray;
+    border-top: 2px solid $fuchsia;
+  }
+}
+
+.labels {
+  font-weight: bold;
+}
