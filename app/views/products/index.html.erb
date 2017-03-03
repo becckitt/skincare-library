@@ -1,5 +1,12 @@
-<h2>Good products</h2>
+<div class="main-header">
+  <h1 class="main-header--text">Skincare Index</h1>
+  <div class="new-link">
+    <%= link_to 'New product', new_product_path %>   
+  </div>
+</div>
+
 <div class="list-container">
+  <h2>Good products</h2>
   <table class="good-products">
     <tr class="labels">
       <td>Product Image</td>
@@ -38,6 +45,4 @@
       </tr>
     <% end %>
   </table>
-
-  <%= link_to 'New product', new_product_path, class: "new-link" %>
 </div>
