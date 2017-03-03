@@ -37,3 +37,19 @@ table.bad-products {
 .labels {
   font-weight: bold;
 }
+
+.new-link {
+  float: right;
+  display: inline-block;
+  border-bottom: 3px solid $fuchsia;
+  background: $lightGray;
+  padding: 15px 10px;
+  margin: $mediumSpacing auto;
+  color: black;
+  text-decoration: none;
+  transition: all .5s;
+
+  &:hover {
+    background: whitesmoke;
+  }
+}
