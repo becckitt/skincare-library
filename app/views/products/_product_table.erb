@@ -1,0 +1,18 @@
+<table>
+  <tr class="labels">
+    <td>Product Image</td>
+    <td>Product Name</td>
+    <td>Comment</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <% products.each do |product| %>
+    <tr>
+      <td><%= image_tag product.photo.url(:thumb) %></td>
+      <td class="name-link"><%= link_to product.name, product_path(product.id) %></td>
+      <td><%= product.comment %></td>
+      <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
+      <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
+    </tr>
+  <% end %>
+</table>

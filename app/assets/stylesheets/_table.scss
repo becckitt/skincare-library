@@ -1,0 +1,47 @@
+table {
+  margin: $mediumSpacing auto;
+
+  .labels {
+    font-weight: bold;
+  }
+
+  tr {
+    margin: $mediumSpacing fuckThat;
+  }
+
+  td {
+    padding: $smallSpacing $largeSpacing;
+    background: $lightGray;
+    border-top: 2px solid $fuchsia;
+  }
+
+  .name-link {
+    a {
+      text-decoration: none;
+      color: black;
+      background: linear-gradient($fuchsia, $fuchsia);
+      background-size: 1px 1px;
+      background-repeat: repeat-x;
+      background-position: 0 98%;
+      text-shadow: 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+      transition: all .15s;
+
+      &:hover {
+        background-size: 1px 5px;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+table:nth-of-type(2) {
+  td {
+    border-top: 2px solid $cyan;
+  }
+  .name-link a {
+    background: linear-gradient($cyan, $cyan);
+    background-size: 1px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 98%;
+  }
+}

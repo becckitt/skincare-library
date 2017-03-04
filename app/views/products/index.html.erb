@@ -7,42 +7,9 @@
 
 <div class="list-container">
   <h2>Good products</h2>
-  <table class="good-products">
-    <tr class="labels">
-      <td>Product Image</td>
-      <td>Product Name</td>
-      <td>Comment</td>
-      <td>Edit</td>
-      <td>Delete</td>
-    </tr>
-    <% @product_collection.good_products.each do |product| %>
-      <tr>
-        <td><%= image_tag product.photo.url(:thumb) %></td>
-        <td class="name-link"><%= link_to product.name, product_path(product.id) %></td>
-        <td><%= product.comment %></td>
-        <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
-        <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
-      </tr>
-    <% end %>
+  <%= render 'product_table', products: @product_collection.good_products %>
   </table>
 
   <h2>Bad products</h2>
-  <table class="bad-products">
-    <tr class="labels">
-      <td>Product Image</td>
-      <td>Product Name</td>
-      <td>Comment</td>
-      <td>Edit</td>
-      <td>Delete</td>
-    </tr>
-    <% @product_collection.bad_products.each do |product| %>
-      <tr>
-        <td><%= image_tag product.photo.url(:thumb) %></td>
-        <td class="name-link name-link--bad"><%= link_to product.name, product_path(product.id) %></td>
-        <td><%= product.comment %></td>
-        <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
-        <td><%= link_to 'Delete', product_path(product.id), method: :delete, data: {confirm: "Delete?"} %></td>
-      </tr>
-    <% end %>
-  </table>
+  <%= render 'product_table', products: @product_collection.bad_products %>
 </div>

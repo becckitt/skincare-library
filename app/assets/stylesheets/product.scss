@@ -23,7 +23,6 @@
     position: absolute;
     content: 'Skincare Index';
     opacity: .6;
-    
   }
 
   &:before {
@@ -44,55 +43,4 @@
 .list-container {
   max-width: $maxDocWidth;
   margin: 0 auto;
-}
-
-table {
-  margin: $mediumSpacing auto;
-
-  tr {
-    margin: $mediumSpacing fuckThat;
-  }
-
-  td {
-    padding: $smallSpacing $largeSpacing;
-    background: $lightGray;
-    border-top: 2px solid $fuchsia;
-  }
-
-  .name-link {
-    a {
-      text-decoration: none;
-      color: black;
-      background: linear-gradient($fuchsia, $fuchsia);
-      background-size: 1px 1px;
-      background-repeat: repeat-x;
-      background-position: 0 98%;
-      text-shadow: 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
-      transition: all .15s;
-
-      &:hover {
-        background-size: 1px 5px;
-        text-shadow: none;
-      }
-    }
-
-    &--bad {
-      a {
-        background: linear-gradient($cyan, $cyan);
-        background-size: 1px 1px;
-        background-repeat: repeat-x;
-        background-position: 0 98%;
-      }  
-    }
-  }
-}
-
-table.bad-products {
-  td {
-    border-top: 2px solid $cyan;
-  }
-}
-
-.labels {
-  font-weight: bold;
 }
