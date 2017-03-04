@@ -14,8 +14,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    @product.save
-    redirect_to products_path
+    if @product.save
+      redirect_to products_path, notice: 'Product successfully added'
+    else
+      render action: 'new', notice: 'Something went wrong.'
+    end
   end
 
   def edit
