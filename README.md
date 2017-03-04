@@ -10,6 +10,7 @@ This is what it looks like when you just plain old click through to a product:
 ![screen shot 2017-03-04 at 12 42 13 am](https://cloud.githubusercontent.com/assets/11194529/23576447/7155a99c-0073-11e7-8850-7213458225c7.png)
 
 Wow I really want to visit this site, it looks great, how do I try it out? -- You
+
 Here is a link to ~try before you buy~ https://skincareindex.herokuapp.com/products
 
 How to use:
