@@ -43,5 +43,11 @@ table:nth-of-type(2) {
     background-size: 1px 1px;
     background-repeat: repeat-x;
     background-position: 0 98%;
+    transition: all .15s;
+
+    &:hover {
+      background-size: 1px 5px;
+      text-shadow: none;
+    }
   }
 }

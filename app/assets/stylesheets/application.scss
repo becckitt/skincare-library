@@ -14,14 +14,20 @@
  */
 
  @import '_variables';
+ @import '_main_header';
+ @import '_search_bar';
  @import '_table';
  @import '_form';
  @import 'product';
  @import 'product_show';
 
  body {
-    font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
+  font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
  }
+
+textarea:focus, input:focus{
+  outline: none;
+}
 
  h1, h2 {
   text-align: center;
@@ -33,13 +39,14 @@
   margin: $mediumSpacing auto;
   max-width: 125px;
   min-width: 100px;
-  padding: 15px 10px;
   transition: all .5s;
   text-align: center;
 
   a {
-    text-decoration: none;
     color: black;
+    display: inline-block;
+    padding: 15px 10px;
+    text-decoration: none;
   }
 
   &:hover {

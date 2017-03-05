@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @product_collection = Product
+    @product_collection = Product.search(params[:query])
   end
 
   def show
@@ -43,6 +43,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :comment, :effective, :photo)
+      params.require(:product).permit(:name, :comment, :effective, :photo, :query)
     end
 end

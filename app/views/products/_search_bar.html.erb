@@ -1,0 +1,11 @@
+<div class="search-bar">
+  <div class="search-icon show-icon">
+    <%= image_tag "gradient-emoji-peace.png" %>
+  </div>
+  <div class="search-form">
+    <%= form_tag(products_path, method: :get) do %>
+      <%= text_field_tag :query, params[:query], placeholder: "search" %>
+      <%= submit_tag "", name: nil %>
+    <% end %>
+  </div>
+</div>
