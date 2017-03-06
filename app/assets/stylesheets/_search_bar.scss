@@ -3,25 +3,35 @@
   right: $smallSpacing;
   top: $smallSpacing;
   text-align: right;
+  animation: fadeIn .25s 1 linear forwards;
 
-  .search-icon {
-    cursor: pointer;
-    display: none;
+  input[type=checkbox] {
+    opacity: 0;
+    height: 50px;
+  }
+
+  label {
+    width: 50px;
+    height: 50px;
 
     img {
-      max-width: 40px;
+      height: 60px;
       transform: rotate(10deg);
-    }
-
-    &.show-icon {
-      display: block;
-      animation: fadeIn .25s 1 linear forwards;
     }
   }
 
-  .search-form {
+  input:checked ~ .search-form {
+    display: block;
+    animation: slideIn .15s 1 linear forwards;
+  }
+
+  input[type="checkbox"]:not(:checked) ~ .search-form {
     display: none;
-    margin-top: $mediumSpacing;
+  }
+
+  .search-form {
+    margin-top: -40px;
+    margin-left: -180px;
 
     &.visible {
       display: block;
