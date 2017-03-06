@@ -28,25 +28,4 @@
   position: relative;
   width: 450px;
   margin: $smallSpacing auto $largeSpacing auto;
-
-  &:before,
-  &:after {
-    position: absolute;
-    content: 'Skincare Index';
-    opacity: .6;
-  }
-
-  &:before {
-    color: $fuchsia;
-    z-index: -20;
-    top: 1px;
-    left: 15px;
-  }
-
-  &:after {
-    color: $cyan;
-    z-index: -30;
-    left: 18px;
-    top: -1px;
-  }
 }
