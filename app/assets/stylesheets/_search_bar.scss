@@ -19,6 +19,12 @@
       height: 60px;
       transform: rotate(10deg);
     }
+
+    &:hover {
+      img {
+        animation: wiggle .5s linear forwards;
+      }
+    }
   }
 
   input:checked ~ .search-form {
@@ -69,4 +75,12 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(10deg); }
+  10% { transform: rotate(3deg); }
+  25% { transform: rotate(15deg); }
+  35% { transform: rotate(3deg); }
+  50% { transform: rotate(10deg); }
 }
