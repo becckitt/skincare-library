@@ -5,6 +5,8 @@
   <p><%= @product.comment %></p>
   <div class="links">
     <div class="link"><%= link_to 'Edit', edit_product_path(@product.id) %></div>
-    <div class="link link--blue"><%= link_to 'Delete', product_path(@product.id), method: :delete, data: {confirm: "Delete?"} %></div>
+    <% if !Rails.env.production? %>
+      <div class="link link--blue"><%= link_to 'Delete', product_path(@product.id), method: :delete, data: {confirm: "Delete?"} %></div>
+    <% end %>
   </div>
 </div>
