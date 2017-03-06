@@ -8,5 +8,5 @@ $(function() {
   $('.search-form').focusout(function() {
     $('.search-form').removeClass('visible');
     $('.search-icon').addClass('show-icon');
-  })
+  });
 });
