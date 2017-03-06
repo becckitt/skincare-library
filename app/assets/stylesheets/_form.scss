@@ -4,6 +4,24 @@
   text-align: center;
   background: $lightGray;
   padding: $mediumSpacing;
+  border: 8px dotted whitesmoke;
+  position: relative;
+
+  .form-emoji {
+    position: absolute;
+    width: 50px;
+    top: -20px;
+    
+
+    &.sparkle:nth-of-type(1) {
+      left: -20px;
+    }
+    &.sparkle:nth-of-type(2) {
+      right: -20px;
+      transform: rotate(180deg);
+      transform:scaleX(-1);
+    }
+  }
 
   label {
     margin-bottom: $mediumSpacing;
@@ -11,15 +29,17 @@
   }
 
   textarea {
-    border: none;
-    border-bottom: 3px solid $fuchsia;
+    border: 3px solid whitesmoke;
+    padding: 8px;
   }
 
   input[type=submit] {
-    border: 3px solid $fuchsia;
+    border: 1px solid fuchsia;
+    border-bottom: 4px solid fuchsia;
     font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
     font-size: 12px;
     font-weight: bold;
+    padding: $smallSpacing;
   }
 
   .img-preview {

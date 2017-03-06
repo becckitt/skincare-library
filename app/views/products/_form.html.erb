@@ -1,4 +1,6 @@
 <%= form_for(@product, multipart: true, html: {class: "product-form"}) do |f| %>
+  <%= image_tag 'sparkle-emoji.png', class: "form-emoji sparkle" %>
+  <%= image_tag 'sparkle-emoji.png', class: "form-emoji sparkle" %>
   <p>
     <%= f.label :name %> <br>
     <%= f.text_area :name, cols: 30, rows: 2  %>
