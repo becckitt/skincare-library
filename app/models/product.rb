@@ -12,11 +12,15 @@ class Product < ActiveRecord::Base
     end
 
     def good_products
-      Product.all.select{ |product| product.effective }
+      Product.where(effective: true, wishlist: false)
     end
 
     def bad_products
-      Product.all.select{ |product| !product.effective }
+      Product.where(effective: false, wishlist: false)
+    end
+
+    def wishlist
+      Product.where(wishlist: true)
     end
   end
 end

@@ -3,16 +3,21 @@
     <td>Product Image</td>
     <td>Product Name</td>
     <td>Comment</td>
-    <td>Edit</td>
-    <td>Delete</td>
+    <% if wishlist %>
+      <td>Link</td>
+    <% end %>
+    <td>Modify</td>
   </tr>
   <% products.each do |product| %>
     <tr>
       <td><%= image_tag product.photo.url(:thumb) %></td>
       <td class="name-link"><%= link_to product.name, product_path(product.id) %></td>
       <td><%= product.comment %></td>
-      <td><%= link_to 'Edit', edit_product_path(product.id) %></td>
+      <% if product.link %>
+        <td><%= link_to 'Link>>', product.link, target: '_blank' %></td>
+      <% end %>
       <td>
+        <%= link_to 'Edit', edit_product_path(product.id) %><br><br>
         <% if Rails.env.production? %>
           <%= link_to 'Delete', '#', data: {confirm: "Delete?"} %>
         <% else %>

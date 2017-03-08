@@ -41,8 +41,12 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def wishlist
+    @wishlist_items = Product.wishlist
+  end
+
   private
     def product_params
-      params.require(:product).permit(:name, :comment, :effective, :photo, :query)
+      params.require(:product).permit(:name, :comment, :effective, :photo, :query, :wishlist, :link)
     end
 end
