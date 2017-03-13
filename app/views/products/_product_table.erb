@@ -1,7 +1,7 @@
 <table>
   <tr class="labels">
-    <td>Product Image</td>
-    <td>Product Name</td>
+    <td>Image</td>
+    <td>Name</td>
     <td>Comment</td>
     <% if wishlist %>
       <td>Link</td>
@@ -11,13 +11,13 @@
   <% products.each do |product| %>
     <tr>
       <td><%= image_tag product.photo.url(:thumb) %></td>
-      <td class="name-link"><%= link_to product.name, product_path(product.id) %></td>
+      <td class="name-link link--underline"><%= link_to product.name, product_path(product.id) %></td>
       <td><%= product.comment %></td>
       <% if product.link %>
         <td><%= link_to 'Link>>', product.link, target: '_blank' %></td>
       <% end %>
-      <td>
-        <%= link_to 'Edit', edit_product_path(product.id) %><br><br>
+      <td class="link--underline">
+        <%= link_to 'Edit', edit_product_path(product.id) %><br>
         <% if Rails.env.production? %>
           <%= link_to 'Delete', '#', data: {confirm: "Delete?"} %>
         <% else %>

@@ -5,9 +5,14 @@ $mediumSpacing: 20px;
 $largeSpacing: 40px;
 
 //colors
-$lightGray: #fbfbfb;
-$fuchsia: fuchsia;
-$cyan: cyan;
+$lightGray: rgba(232,232,232, .2);
+$pink: rgb(234,188,171);
+$lightPink: lighten($pink, 18%);
+$secondaryColor: darken($lightGray, 100%);
 
 //sizing
 $maxDocWidth: 1200px;
+
+//typography
+$sansSerif: 'Karla', Futura, sans-serif;
+$monospace: 'Roboto Mono', 'Droid Sans', 'Courier', monospace;

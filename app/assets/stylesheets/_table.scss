@@ -1,25 +1,25 @@
 table {
   margin: $mediumSpacing auto;
 
-  .labels {
-    font-weight: bold;
-  }
-
   tr {
     margin: $mediumSpacing fuckThat;
   }
 
   td {
     padding: $smallSpacing $largeSpacing;
-    background: $lightGray;
-    border-top: 2px solid $fuchsia;
+    background: $lightPink;
+    border-top: 2px solid $pink;
   }
 
   .name-link {
+    min-width: 175px;
+  }
+
+  .link--underline {
     a {
       text-decoration: none;
       color: black;
-      background: linear-gradient($fuchsia, $fuchsia);
+      background: linear-gradient($pink, $pink);
       background-size: 1px 1px;
       background-repeat: repeat-x;
       background-position: 0 98%;
@@ -36,10 +36,12 @@ table {
 
 table:nth-of-type(2) {
   td {
-    border-top: 2px solid $cyan;
+    border-top: 2px solid $secondaryColor;
+    background: $lightGray;
   }
-  .name-link a {
-    background: linear-gradient($cyan, $cyan);
+
+  .link--underline a {
+    background: linear-gradient($secondaryColor, $secondaryColor);
     background-size: 1px 1px;
     background-repeat: repeat-x;
     background-position: 0 98%;

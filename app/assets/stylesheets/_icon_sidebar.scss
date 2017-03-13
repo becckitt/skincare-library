@@ -1,0 +1,120 @@
+$iconSize: 50px;
+
+.icon-sidebar {
+  position: absolute;
+  right: $smallSpacing;
+  top: $smallSpacing;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .search-bar {
+    text-align: right;
+    animation: fadeIn .25s 1 linear forwards;
+
+    input[type=checkbox] {
+      opacity: 0;
+      height: 50px;
+    }
+
+    label {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      img {
+        height: $iconSize;
+        transform: rotate(10deg);
+      }
+
+      &:hover {
+        img {
+          animation: wiggle .5s linear forwards;
+        }
+      }
+    }
+
+    input:checked ~ .search-form {
+      display: block;
+      animation: slideIn .15s 1 linear forwards;
+    }
+
+    input[type="checkbox"]:not(:checked) ~ .search-form {
+      display: none;
+    }
+
+    .search-form {
+      margin-top: -40px;
+      margin-left: -180px;
+
+      &.visible {
+        display: block;
+        animation: slideIn .15s 1 linear forwards;
+        opacity: .8;
+      }
+
+      input[type=text] {
+        border: none;
+        width: 200px;
+        border-bottom: 3px solid #3e3d3d;
+      }
+
+      input[type=submit] {
+        border: none;
+        background: none;
+        margin-left: -23px;
+        margin-top: -25px;
+        width: 25px;
+        background-image: image_url("search-icon.png");
+        position: absolute;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        animation: fadeIn .25s 1 linear forwards;
+      }
+    }
+  }
+
+  .wishlist-icon {
+    height: $iconSize;
+    width: $iconSize;
+
+    img {
+      height: $iconSize;
+      animation: fadeIn .25s linear forwards;
+    }
+
+    &:hover {
+      img { 
+        animation: fadeIn .25s reverse linear forwards; 
+      }
+
+      &:after {
+        animation: fadeIn .25s linear forwards; 
+        position: absolute;
+        content: "Wishlist";
+        margin-top: 15px;
+        margin-left: -50px;
+        font-family: $sansSerif;
+      }
+    }
+  }
+}
+
+
+@keyframes slideIn {
+  from { width: 0px; }
+  to { width: 200px; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(10deg); }
+  10% { transform: rotate(3deg); }
+  25% { transform: rotate(15deg); }
+  35% { transform: rotate(3deg); }
+  50% { transform: rotate(10deg); }
+}

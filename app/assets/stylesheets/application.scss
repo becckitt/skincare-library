@@ -14,31 +14,24 @@
  */
 
  @import '_variables';
+ @import '_typography';
  @import '_main_header';
- @import '_search_bar';
+ @import '_icon_sidebar';
  @import '_table';
  @import '_form';
  @import '_footer';
  @import 'product';
  @import 'product_show';
 
- body {
-  font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
- }
-
-textarea:focus, input:focus{
+textarea:focus, input:focus {
   outline: none;
 }
 
- h1, h2 {
-  text-align: center;
- }
-
- .link {
+.link {
   background: $lightGray;
-  border-bottom: 3px solid $fuchsia;
-  margin: $mediumSpacing auto;
-  max-width: 125px;
+  border-bottom: 3px solid $pink;
+  margin: $fuckThat auto $mediumSpacing auto;
+  max-width: 150px;
   min-width: 100px;
   transition: all .5s;
   text-align: center;
@@ -51,10 +44,6 @@ textarea:focus, input:focus{
   }
 
   &:hover {
-    background: whitesmoke;
-  }
-
-  &--blue {
-    border-bottom: 3px solid $cyan;
+    background: darken($lightGray, 30%);
   }
 }

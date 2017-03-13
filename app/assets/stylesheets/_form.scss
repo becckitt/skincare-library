@@ -15,6 +15,7 @@
     &.sparkle:nth-of-type(1) {
       left: -20px;
     }
+    
     &.sparkle:nth-of-type(2) {
       right: -20px;
       transform: rotate(180deg);
@@ -33,9 +34,8 @@
   }
 
   input[type=submit] {
-    border: 1px solid fuchsia;
-    border-bottom: 4px solid fuchsia;
-    font-family: 'Anonymous Pro', 'Droid Sans', 'Courier', monospace;
+    border: 1px solid $pink;
+    border-bottom: 4px solid $pink;
     font-size: 12px;
     font-weight: bold;
     padding: $smallSpacing;
@@ -49,14 +49,5 @@
   .image-section {
     label { width: 100%; }
     text-align: center;
-  }
-
-  .wishlist-trigger {
-    input[type=checkbox]:not(:checked) {
-      
-    }
-    input[type=checkbox]:checked {
-      
-    }
   }
 }
