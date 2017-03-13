@@ -1,5 +1,20 @@
+$pinkLink: $darkPink;
+$pinkTableBg: lighten($pink, 2%);
+$pinkTdBorder: darken($pink, 5%);
+
+$secondaryColor: $green;
+$darkSecondary: darken($secondaryColor, 28%);
+
+$secondaryLink: $darkSecondary;
+$secondaryTableBg: lighten($secondaryColor, 10%);
+$secondaryTdBorder: darken($secondaryColor, 5%);
+
 table {
   margin: $mediumSpacing auto;
+  border-collapse: collapse;
+  border-spacing:0;
+  border: 2px solid $pink;
+  line-height: 1.2rem;
 
   tr {
     margin: $mediumSpacing fuckThat;
@@ -7,8 +22,8 @@ table {
 
   td {
     padding: $smallSpacing $largeSpacing;
-    background: $lightPink;
-    border-top: 2px solid $pink;
+    background: $pinkTableBg;
+    border-top: 2px solid $pinkTdBorder;
   }
 
   .name-link {
@@ -19,37 +34,36 @@ table {
     a {
       text-decoration: none;
       color: black;
-      background: linear-gradient($pink, $pink);
+      background: linear-gradient($pinkLink, $pinkLink);
       background-size: 1px 1px;
       background-repeat: repeat-x;
-      background-position: 0 98%;
-      text-shadow: 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+      background-position: 0 88%;
       transition: all .15s;
 
       &:hover {
         background-size: 1px 5px;
-        text-shadow: none;
       }
     }
   }
 }
 
 table:nth-of-type(2) {
+  border: 2px solid $secondaryColor;
+
   td {
-    border-top: 2px solid $secondaryColor;
-    background: $lightGray;
+    border-top: 2px solid $secondaryTdBorder;
+    background: $secondaryTableBg;
   }
 
   .link--underline a {
-    background: linear-gradient($secondaryColor, $secondaryColor);
+    background: linear-gradient($secondaryLink, $secondaryLink);
     background-size: 1px 1px;
     background-repeat: repeat-x;
-    background-position: 0 98%;
+    background-position: 0 88%;
     transition: all .15s;
 
     &:hover {
       background-size: 1px 5px;
-      text-shadow: none;
     }
   }
 }
