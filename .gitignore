@@ -17,3 +17,4 @@
 /tmp
 libreadline.7.0.dylib
 /public/system/products
+*.DS_Store

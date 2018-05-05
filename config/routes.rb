@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  root 'products#index'
-  resources :products
+  devise_for :users
+  namespace :api do
+    namespace :v1 do
+      resources :products do
+        resources :ingredients
+      end
+      resources :wishlists
+    end
+  end
 
-  get '/wishlist' => 'products#wishlist'
+  root to: 'products#index'
 end

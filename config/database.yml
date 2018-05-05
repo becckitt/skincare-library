@@ -1,14 +1,18 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
+development: &development
   <<: *default
-  database: skincare_database_development
+  database: skincare-library-backend_development
+  username: postgres
+  password: skincare-lib
+  host: localhost
+
 test:
-  <<: *default
-  database: skincare_database_test
+  <<: *development
+  database: skincare-library-backend_test
+
 production:
-  <<: *default
-  database: skincare_database_production
+  url: <%= ENV['DATABASE_URL'] %>
