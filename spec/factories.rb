@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :tag do
+    
+  end
+  factory :brand do
+    
+  end
   factory :user do
     username "Joe10"
     email "joe10@gmail.com"
