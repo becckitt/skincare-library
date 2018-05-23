@@ -6,8 +6,8 @@ module Api
       # GET /products
       def index
         @products = Product.all
-
-        render json: @products
+        
+        render json: ProductSerializer.new(@products).serialized_json
       end
 
       # GET /products/1
@@ -48,7 +48,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def product_params
-          params.require(:product).permit(:name, :comment, :rating, :price, :link, :repurchase)
+          params.require(:product).permit(:id, :name, :comment, :rating, :price, :link, :repurchase)
         end
     end
   end
