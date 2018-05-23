@@ -56,4 +56,8 @@ FactoryBot.define do
     email "joe10@gmail.com"
     password "notpassword"
   end
+
+  factory :routine do
+    
+  end
 end

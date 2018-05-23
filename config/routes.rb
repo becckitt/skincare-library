@@ -5,7 +5,8 @@ Rails.application.routes.draw do
       resources :products do
         resources :ingredients
       end
-      resources :wishlists
+      get 'wishlist', to: 'products#wishlist'
+      resources :routine
     end
   end
 

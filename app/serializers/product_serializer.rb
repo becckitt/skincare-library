@@ -6,4 +6,3 @@ class ProductSerializer
   has_many :ingredients, through: :product_ingredients
   belongs_to :brand
 end
-

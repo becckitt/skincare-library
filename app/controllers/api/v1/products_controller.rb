@@ -3,19 +3,22 @@ module Api
     class ProductsController < ApplicationController
       before_action :set_product, only: [:show, :update, :destroy]
 
-      # GET /products
       def index
-        @products = Product.all
-        
+        @products = Product.all.where(wishlist: false)
+
         render json: ProductSerializer.new(@products).serialized_json
       end
 
-      # GET /products/1
+      def wishlist
+        @products = Product.all.where(wishlist: true)
+
+        render json: ProductSerializer.new(@products).serialized_json
+      end
+
       def show
         render json: @product
       end
 
-      # POST /products
       def create
         @product = Product.new(product_params)
 
@@ -26,7 +29,6 @@ module Api
         end
       end
 
-      # PATCH/PUT /products/1
       def update
         if @product.update(product_params)
           render json: @product
@@ -35,18 +37,15 @@ module Api
         end
       end
 
-      # DELETE /products/1
       def destroy
         @product.destroy
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
         def set_product
           @product = Product.find(params[:id])
         end
 
-        # Only allow a trusted parameter "white list" through.
         def product_params
           params.require(:product).permit(:id, :name, :comment, :rating, :price, :link, :repurchase)
         end
