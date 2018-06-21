@@ -2,23 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.4'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -26,18 +16,26 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# set up $$$$ support
 gem 'money-rails'
 
-gem 'figaro'
+# Setup app secific env variables
+gem 'dotenv-rails'
 
 gem 'devise'
 
 gem 'actionmailer'
 
-gem 'fast_jsonapi'
+# JSON-API
+gem 'jsonapi_suite', '~> 0.6'
+gem 'jsonapi-rails', '~> 0.2.1'
+gem 'jsonapi_swagger_helpers', '~> 0.6', require: false
+gem 'jsonapi_spec_helpers', '~> 0.4', require: false
+gem 'kaminari', '~> 1.0'
+
+gem 'webpacker', '~> 3.5'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'

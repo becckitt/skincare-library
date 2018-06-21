@@ -1,54 +1,43 @@
-module Api
-  module V1
-    class ProductsController < ApplicationController
-      before_action :set_product, only: [:show, :update, :destroy]
+class Api::V1::ProductsController < ApiController
+  jsonapi resource: ProductResource
 
-      def index
-        @products = Product.all.where(wishlist: false)
+  strong_resource :product
 
-        render json: ProductSerializer.new(@products).serialized_json
-      end
+  before_action :apply_strong_params, only: [:create, :update]
 
-      def wishlist
-        @products = Product.all.where(wishlist: true)
+  def index
+    products = Product.all
+    render_jsonapi(products)
+  end
 
-        render json: ProductSerializer.new(@products).serialized_json
-      end
+  def show
+    scope = jsonapi_scope(Product.where(id: params[:id]))
+    render_jsonapi(scope.resolve.first, scope: false)
+  end
 
-      def show
-        render json: @product
-      end
+  def create
+    product, success = jsonapi_create.to_a
 
-      def create
-        @product = Product.new(product_params)
-
-        if @product.save
-          render json: @product, status: :created, location: @product
-        else
-          render json: @product.errors, status: :unprocessable_entity
-        end
-      end
-
-      def update
-        if @product.update(product_params)
-          render json: @product
-        else
-          render json: @product.errors, status: :unprocessable_entity
-        end
-      end
-
-      def destroy
-        @product.destroy
-      end
-
-      private
-        def set_product
-          @product = Product.find(params[:id])
-        end
-
-        def product_params
-          params.require(:product).permit(:id, :name, :comment, :rating, :price, :link, :repurchase)
-        end
+    if success
+      render_jsonapi(product, scope: false)
+    else
+      render_errors_for(product)
     end
+  end
+
+  def update
+    product, success = jsonapi_update.to_a
+
+    if success
+      render_jsonapi(product, scope: false)
+    else
+      render_errors_for(product)
+    end
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    return head(:no_content)
   end
 end
