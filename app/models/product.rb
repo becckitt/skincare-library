@@ -1,26 +1,22 @@
-class Product < ActiveRecord::Base
-  has_attached_file :photo, styles: { medium: "300x300>", thumb: "100x100#"}
-  validates_attachment :photo, content_type: {content_type: ["image/jpg", "image/jpeg", "image/png"]}
-  class << self
-    def search(query)
-      if query
-        query = query.upcase
-        where('upper(name) LIKE ? ', "%#{query}%")
-      else
-        self
-      end
-    end
-
-    def good_products
-      Product.where(effective: true, wishlist: false)
-    end
-
-    def bad_products
-      Product.where(effective: false, wishlist: false)
-    end
-
-    def wishlist
-      Product.where(wishlist: true)
-    end
-  end
+class Product < ApplicationRecord
+  enum product_type: {
+    oil_cleanser: 0,
+    water_based_cleanser: 1,
+    exfoliator: 2,
+    toner: 3,
+    essence: 4,
+    serum: 5,
+    mask: 6,
+    eye_cream: 7,
+    moisturizer: 8,
+    oil: 9,
+    sunscreen: 10,
+    retinol: 11
+  }
+  enum repurchase: { yes: 0, maybe: 1, no: 2 }
+  has_many :product_tags
+  has_many :tags, through: :product_tags
+  has_many :product_ingredients
+  has_many :ingredients, through: :product_ingredients
+  belongs_to :brand
 end
