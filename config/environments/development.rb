@@ -42,7 +42,7 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   # config for devise
-  config.action_mailer.default_url_options = { host: 'localhost', port: 6001 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 
   # Raises error for missing translations

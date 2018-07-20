@@ -70,3 +70,6 @@ Product.find_or_create_by(
   wishlist: true,
   brand: Brand.find_or_create_by(name: "Jordan Samuels Skin")
 )
+
+u = User.new(email: "hello@nothanks.com", encrypted_password: '123456')
+u.save!
