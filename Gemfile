@@ -26,12 +26,7 @@ gem 'devise'
 
 gem 'actionmailer'
 
-# JSON-API
-gem 'jsonapi_suite', '~> 0.6'
-gem 'jsonapi-rails', '~> 0.2.1'
-gem 'jsonapi_swagger_helpers', '~> 0.6', require: false
-gem 'jsonapi_spec_helpers', '~> 0.4', require: false
-gem 'kaminari', '~> 1.0'
+gem 'graphql', '1.7.4'
 
 gem 'webpacker', '~> 3.5'
 
@@ -43,6 +38,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'graphiql-rails', '1.4.4'
 end
 
 
