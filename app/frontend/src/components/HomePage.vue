@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import { Product } from '@/utils/models'
-
 export default {
   name: 'HomePage',
   data () {
@@ -23,8 +21,7 @@ export default {
       this.loading = true
 
       try {
-        this.products = (await Product.all()).data
-        console.log(this.products)
+        // this.products = (await Product.all()).data
       } catch (e) {
         console.log('Something went wrong fetching products: ', e)
       }

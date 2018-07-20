@@ -1,9 +1,5 @@
 class Api::V1::ProductsController < ApiController
-  jsonapi resource: ProductResource
-
-  strong_resource :product
-
-  before_action :apply_strong_params, only: [:create, :update]
+  # before_action :apply_strong_params, only: [:create, :update]
 
   def index
     products = Product.all
