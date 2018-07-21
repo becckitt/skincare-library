@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'rails_helper'
 
 class Resolvers::SignInUserTest < ActiveSupport::TestCase
   def perform(args = {})

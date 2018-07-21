@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'rails_helper'
 
 class Resolvers::CreateUserTest < ActiveSupport::TestCase
   def perform(args = {})

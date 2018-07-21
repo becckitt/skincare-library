@@ -26,8 +26,11 @@ gem 'actionmailer'
 
 gem 'bcrypt'
 
+# GraphQL gems
 gem 'graphql', '1.7.4'
 gem 'graphiql-rails'
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
 
 gem 'webpacker', '~> 3.5'
 
