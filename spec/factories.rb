@@ -6,6 +6,7 @@ FactoryBot.define do
   factory :product do
     name "Advanced Snail 96 Mucin Power Essence"
     brand { create :brand }
+    user { create :user }
     comment "Super nice and moisturizing, I think it works but will wait and see if I notice a difference after I run out"
     rating 8
     price_cents 19

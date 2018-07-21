@@ -22,11 +22,12 @@ gem 'money-rails'
 # Setup app secific env variables
 gem 'dotenv-rails'
 
-gem 'devise'
-
 gem 'actionmailer'
 
+gem 'bcrypt'
+
 gem 'graphql', '1.7.4'
+gem 'graphiql-rails'
 
 gem 'webpacker', '~> 3.5'
 
@@ -38,7 +39,10 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'graphiql-rails', '1.4.4'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 

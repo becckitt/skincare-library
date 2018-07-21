@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
-  devise_for :users
   namespace :api do
     namespace :v1 do
       resources :products do
@@ -11,11 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  # if Rails.env.development?
-  #   mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: '/graphql'
-
-  #   root to: redirect('/graphiql')
-  # end
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
 
   root to: 'welcome#index'
 end
