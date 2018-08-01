@@ -46,10 +46,7 @@ const apolloClient = new ApolloClient({
 Vue.use(VueApollo)
 
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
-  defaultOptions: {
-    $loadingKey: 'Loading'
-  }
+  defaultClient: apolloClient
 })
 
 /* eslint-disable no-new */

@@ -1,12 +1,12 @@
 <template>
   <div class="main-wrapper">
-    <!-- {{ this.products }} -->
-    <h1> hello!!! </h1>
+    <h1> Skincare Tracker </h1>
+    {{ this.products }}
   </div>
 </template>
 
 <script>
-// import { ALL_PRODUCTS_QUERY } from '@/constants/graphql'
+import { ALL_PRODUCTS_QUERY } from '@/constants/graphql'
 
 export default {
   name: 'Dashboard',
@@ -14,6 +14,14 @@ export default {
     return {
       loading: false,
       products: []
+    }
+  },
+  apollo: {
+    products: {
+      query: ALL_PRODUCTS_QUERY,
+      update (data) {
+        return data.allProducts
+      }
     }
   }
 }
