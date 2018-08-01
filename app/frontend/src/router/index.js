@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from '@/components/HomePage'
-import AppLogin from '@/components/AppLogin'
-import AppSignup from '@/components/AppSignup'
-import Dashboard from '@/components/Dashboard'
+import HomePage from '@/pages/HomePage'
+import AppLogin from '@/pages/AppLogin'
+import AppSignup from '@/pages/AppSignup'
+import Dashboard from '@/pages/Dashboard'
 // import firebase from 'firebase'
 
 Vue.use(Router)

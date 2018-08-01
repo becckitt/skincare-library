@@ -9,7 +9,7 @@
 // import { ALL_PRODUCTS_QUERY } from '@/constants/graphql'
 
 export default {
-  name: 'HomePage',
+  name: 'Dashboard',
   data () {
     return {
       loading: false,
