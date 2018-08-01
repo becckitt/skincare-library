@@ -4,7 +4,8 @@ import HomePage from '@/pages/HomePage'
 import AppLogin from '@/pages/AppLogin'
 import AppSignup from '@/pages/AppSignup'
 import Dashboard from '@/pages/Dashboard'
-// import firebase from 'firebase'
+import firebase from 'firebase'
+import 'firebase/auth'
 
 Vue.use(Router)
 
@@ -40,13 +41,17 @@ let router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   let currentUser = firebase.auth().currentUser
-//   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+router.beforeEach((to, from, next) => {
+  const currentUser = firebase.auth().currentUser
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
 
-//   if (requiresAuth && !currentUser) next('/login')
-//   else if (!requiresAuth && currentUser) next('/login')
-//   else next()
-// })
+  if (requiresAuth && !currentUser) {
+    next('/login')
+  } else if (requiresAuth && currentUser) {
+    next()
+  } else {
+    next()
+  }
+})
 
 export default router
