@@ -5,7 +5,7 @@
       <router-link to="/login">Login</router-link>
       <router-link to="/signup">Signup</router-link>
     </div>
-    <div v-else class="nav-inner-wrapper">
+    <div v-else class="nav-wrapper-inner">
       <router-link to="/dashboard">Skincare Tracker</router-link>
       <button @click="logout">Logout</button>
     </div>
@@ -32,3 +32,35 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.nav-wrapper {
+  height: 40px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 5px 8px -5px #aaa;
+  -moz-box-shadow: 0 5px 8px -5px #aaa;
+  box-shadow: 0 5px 8px -5px #aaa;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+}
+
+.nav-wrapper-inner {
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+</style>

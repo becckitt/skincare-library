@@ -10,6 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { setContext } from 'apollo-link-context'
 import VueApollo from 'vue-apollo'
 import firebase from 'firebase'
+import './assets/main.css'
 let app
 
 const config = {
