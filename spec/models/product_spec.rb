@@ -18,6 +18,12 @@ RSpec.describe Product, :type => :model do
   end
 
   it "has related tags" do 
+    # figure out a better way to do this later but rn 
+    # i could care less about the right way to properly
+    # cleanup after a test!!!!
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+
     product2 = create(:product_with_tags)
     expect(product2.tags.first.name).to eq("hydrating")
   end
@@ -27,6 +33,9 @@ RSpec.describe Product, :type => :model do
   end
 
   it "has related ingredients" do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.clean
+
     product3 = create(:product_with_ingredients)
     expect(product3.ingredients.first.name).to eq("alcohol")
   end

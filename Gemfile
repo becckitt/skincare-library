@@ -22,16 +22,15 @@ gem 'money-rails'
 # Setup app secific env variables
 gem 'dotenv-rails'
 
-gem 'devise'
-
 gem 'actionmailer'
 
-# JSON-API
-gem 'jsonapi_suite', '~> 0.6'
-gem 'jsonapi-rails', '~> 0.2.1'
-gem 'jsonapi_swagger_helpers', '~> 0.6', require: false
-gem 'jsonapi_spec_helpers', '~> 0.4', require: false
-gem 'kaminari', '~> 1.0'
+gem 'bcrypt'
+
+# GraphQL gems
+gem 'graphql', '1.7.4'
+gem 'graphiql-rails'
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
 
 gem 'webpacker', '~> 3.5'
 
@@ -43,6 +42,10 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
 

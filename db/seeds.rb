@@ -1,4 +1,5 @@
 Product.destroy_all
+User.destroy_all
 
 snail_mucin_ingredients = [
   "Snail Secretion Filtrate", 
@@ -15,6 +16,12 @@ snail_mucin_ingredients = [
   "Phenoxyethanol"
 ]
 
+user1 = User.new(email: "hello@nothanks.com", username: 'user1', password: '123456')
+user1.save!
+
+user2 = User.new(email: "testing@example.com", username: 'user2', password: '654321')
+user2.save!
+
 klairs_toner = Product.find_or_create_by(
   name: "Supple Preparation Toner",
   comment: "This definitely made a big difference in my skin. Loved how hydrating it was. I do think it was causing bumps, though.",
@@ -23,7 +30,8 @@ klairs_toner = Product.find_or_create_by(
   link: "https://sokoglam.com/products/klairs-supple-preparation-facial-toner-180ml",
   repurchase: :no,
   product_type: :toner,
-  brand: Brand.find_or_create_by(name: "Klairs")
+  brand: Brand.find_or_create_by(name: "Klairs"),
+  user: user1
 )
 
 klairs_toner.tags.find_or_create_by(name: "hydrating")
@@ -37,7 +45,8 @@ embryolisse = Product.find_or_create_by(
   link: "https://www.dermstore.com/product_Lait+Creme+Concentre_51945.htm",
   repurchase: :yes,
   product_type: :moisturizer,
-  brand: Brand.find_or_create_by(name: "Embryolisse")
+  brand: Brand.find_or_create_by(name: "Embryolisse"),
+  user: user1
 )
 
 embryolisse.tags.find_or_create_by(name: "moisturizing")
@@ -51,7 +60,8 @@ snail_mucin = Product.find_or_create_by(
   link: "https://sokoglam.com/products/cosrx-advanced-snail-96-mucin-power-essence",
   repurchase: :yes,
   product_type: :serum,
-  brand: Brand.find_or_create_by(name: "CosRX")
+  brand: Brand.find_or_create_by(name: "CosRX"),
+  user: user2
 )
 
 snail_mucin.tags.find_or_create_by(name: "repairing")
@@ -68,5 +78,6 @@ Product.find_or_create_by(
   link: "https://jordansamuelskin.com/products/plie-treatment-cleanser",
   product_type: :water_based_cleanser,
   wishlist: true,
-  brand: Brand.find_or_create_by(name: "Jordan Samuels Skin")
+  brand: Brand.find_or_create_by(name: "Jordan Samuels Skin"),
+  user: user2
 )

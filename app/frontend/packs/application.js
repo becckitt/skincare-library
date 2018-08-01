@@ -9,4 +9,19 @@
 
 import axios from 'axios'
 import Vue from 'vue'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebaseui'
+
 Vue.http = Vue.prototype.$http = axios
+
+const config = {
+  apiKey: "AIzaSyByet0rN7obtN6XkgHyU1n_MDMQm_ii668",
+  authDomain: "skincare-library-c0019.firebaseapp.com",
+  databaseURL: "https://skincare-library-c0019.firebaseio.com",
+  projectId: "skincare-library-c0019",
+  storageBucket: "skincare-library-c0019.appspot.com",
+  messagingSenderId: "687793472453"
+}
+
+firebase.initializeApp(config)
