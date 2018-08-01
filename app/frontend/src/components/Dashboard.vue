@@ -1,12 +1,21 @@
 <template>
   <div class="main-wrapper">
-    <h1> Welcome! </h1>
+    <!-- {{ this.products }} -->
+    <h1> hello!!! </h1>
   </div>
 </template>
 
 <script>
+// import { ALL_PRODUCTS_QUERY } from '@/constants/graphql'
+
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  data () {
+    return {
+      loading: false,
+      products: []
+    }
+  }
 }
 </script>
 
