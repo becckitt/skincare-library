@@ -1,24 +1,43 @@
 <template>
   <div>
-    {{ brandProducts }}
+    <h1>Products from {{ brandName }}</h1>
+    <div v-for="product in products">
+      <h4>{{product.name}}</h4>
+      <p>{{product.comment}}</p>
+    </div>
   </div>
 </template>
 
 <script>
-import { BRAND_PRODUCTS_QUERY } from '@/constants/graphql'
+import { BRAND_SEARCH_QUERY } from '@/constants/graphql'
+
 export default {
   name: 'BrandProducts',
   data () {
     return {
-      brandProducts: []
+      brandProducts: [],
+      queryParam: this.$route.params.brandName
     }
   },
   apollo: {
     brandProducts: {
-      query: BRAND_PRODUCTS_QUERY,
+      query: BRAND_SEARCH_QUERY,
+      variables () {
+        return {
+          filter: this.queryParam
+        }
+      },
       update (data) {
-        return data
+        return data.brandSearch[0]
       }
+    }
+  },
+  computed: {
+    brandName () {
+      return this.brandProducts.name
+    },
+    products () {
+      return this.brandProducts.products
     }
   }
 }

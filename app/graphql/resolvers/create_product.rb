@@ -13,7 +13,7 @@ class Resolvers::CreateProduct < GraphQL::Function
       product_type: args[:product_type],
       wishlist:     args[:wishlist],
       brand:        args[:brand],
-      user:         ctx[:current_user]
+      user:         _ctx[:current_user]
     )
   rescue ActiveRecord::RecordInvalid => e
     GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")  

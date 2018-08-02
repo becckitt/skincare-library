@@ -12,11 +12,13 @@ export const ALL_PRODUCTS_QUERY = gql`{
   }
 }`
 
-export const BRAND_PRODUCTS_QUERY = gql`{
-  brandProducts {
-    name
-    products {
+export const BRAND_SEARCH_QUERY = gql`
+  query brandSearch($filter: String!) {
+    brandSearch(filter: {name_contains: $filter}) {
       name
+      products {
+        name
+        comment
+      }
     }
-  }
-}`
+  }`

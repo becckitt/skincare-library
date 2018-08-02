@@ -36,7 +36,7 @@ let router = new Router({
       }
     },
     {
-      path: '/brand/:id',
+      path: '/brand/:brandName',
       name: 'brand',
       component: BrandProducts,
       meta: {
