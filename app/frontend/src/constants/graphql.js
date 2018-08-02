@@ -11,3 +11,12 @@ export const ALL_PRODUCTS_QUERY = gql`{
     }
   }
 }`
+
+export const BRAND_PRODUCTS_QUERY = gql`{
+  brandProducts {
+    name
+    products {
+      name
+    }
+  }
+}`

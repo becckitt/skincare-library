@@ -4,6 +4,7 @@ import HomePage from '@/pages/HomePage'
 import AppLogin from '@/pages/AppLogin'
 import AppSignup from '@/pages/AppSignup'
 import Dashboard from '@/pages/Dashboard'
+import BrandProducts from '@/pages/BrandProducts'
 import firebase from 'firebase'
 import 'firebase/auth'
 
@@ -30,6 +31,14 @@ let router = new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/brand/:id',
+      name: 'brand',
+      component: BrandProducts,
       meta: {
         requiresAuth: true
       }

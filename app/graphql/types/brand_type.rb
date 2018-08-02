@@ -3,4 +3,5 @@ Types::BrandType = GraphQL::ObjectType.define do
 
   field :id, !types.ID
   field :name, !types.String
+  field :product, !Types::ProductType
 end
