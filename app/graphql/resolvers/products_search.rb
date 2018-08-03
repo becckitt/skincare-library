@@ -11,6 +11,7 @@ class Resolvers::ProductsSearch
 
     argument :OR, -> { types[ProductFilter] }
     argument :name_contains, types.String
+    argument :id_contains, types.ID
   end
 
   option :filter, type: ProductFilter, with: :apply_filter
@@ -23,6 +24,7 @@ class Resolvers::ProductsSearch
   def normalize_filters(value, branches = [])
     scope = Product.all
     scope = scope.where('lower(name) LIKE ?', "%#{value['name_contains'].downcase}%") if value['name_contains']
+    scope = scope.where("id = #{value['id_contains']}") if value['id_contains']
     
     branches << scope
 

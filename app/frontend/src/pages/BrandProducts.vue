@@ -4,6 +4,7 @@
     <div v-for="product in products">
       <h4>{{product.name}}</h4>
       <p>{{product.comment}}</p>
+      <router-link :to="{name: 'product', params: { id: product.id }}">View product</router-link>
     </div>
   </div>
 </template>
