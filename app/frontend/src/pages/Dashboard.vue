@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .dashboard-wrapper {
-  max-width: 950px;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 0 15px;
 }

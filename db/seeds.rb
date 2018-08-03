@@ -131,3 +131,55 @@ Product.find_or_create_by(
   brand: Brand.find_or_create_by(name: "Stratia"),
   user: user2
 )
+
+Product.find_or_create_by(
+  name: "Hydrating Cleanser",
+  comment: "Really gentle cleanser, very nice",
+  price_cents: "11.00",
+  link: "https://amazon.com/",
+  product_type: "water based cleanser",
+  wishlist: false,
+  repurchase: :yes,
+  rating: 7,
+  brand: Brand.find_or_create_by(name: "Cerave"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "Micellar Water",
+  comment: "This gets rid of EVERYTHING. So gentle.",
+  price_cents: "9.00",
+  link: "https://amazon.com/",
+  product_type: "micellar water",
+  wishlist: false,
+  repurchase: :yes,
+  rating: 10,
+  brand: Brand.find_or_create_by(name: "Garnier"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "Morning Gel Cleanser",
+  comment: "I like this, but idk if it's super necessary considering my other cleansers. It does smell good though.",
+  price_cents: "60.00",
+  link: "https://sephora.com/",
+  product_type: "oil cleanser",
+  wishlist: false,
+  repurchase: :no,
+  rating: 5,
+  brand: Brand.find_or_create_by(name: "Eve Lom"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "Moisturizing face cream",
+  comment: "This is such a good cream, but way too expensive to use beyond the one trial size I got :(((((",
+  price_cents: "200.00",
+  link: "https://stratia.com/",
+  product_type: "moisturizer",
+  wishlist: false,
+  repurchase: :no,
+  rating: 10,
+  brand: Brand.find_or_create_by(name: "Barbara Sturm"),
+  user: user2
+)
