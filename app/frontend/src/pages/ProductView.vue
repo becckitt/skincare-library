@@ -1,8 +1,18 @@
 <template>
   <div class="main-wrapper">
     <h1> {{ product.name }} </h1>
-    <p> {{ product.comment }} </p>
+    <p class="detail-label">Brand</p>
     <router-link :to="{ name: 'brand', params: { brandName: product.brand.name }}">{{ product.brand.name }}</router-link>
+    <p class="detail-label">Type</p>
+    <p> {{ product.product_type }} </p>
+    <p class="detail-label">Price</p>
+    <p> ${{ product.price_cents }} </p>
+    <p class="detail-label">Rating</p>
+    <p> {{ product.rating }} </p>
+    <p class="detail-label">Re-buy?</p>
+    <p> {{ product.repurchase }} </p>
+    <p class="detail-label">Notes</p>
+    <p> {{ product.comment }} </p>
   </div>
 </template>
 
@@ -35,5 +45,7 @@ export default {
 </script>
 
 <style scoped>
-
+.detail-label {
+  font-weight: bold;
+}
 </style>
