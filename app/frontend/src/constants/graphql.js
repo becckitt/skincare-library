@@ -6,6 +6,10 @@ export const ALL_PRODUCTS_QUERY = gql`{
     name
     comment
     link
+    product_type
+    price_cents
+    rating
+    repurchase
     brand {
       name
     }

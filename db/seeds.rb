@@ -25,11 +25,11 @@ user2.save!
 klairs_toner = Product.find_or_create_by(
   name: "Supple Preparation Toner",
   comment: "This definitely made a big difference in my skin. Loved how hydrating it was. I do think it was causing bumps, though.",
-  rating: 5,
+  rating: 7,
   price_cents: "22.00",
   link: "https://sokoglam.com/products/klairs-supple-preparation-facial-toner-180ml",
-  repurchase: :no,
-  product_type: :toner,
+  repurchase: :maybe,
+  product_type: "toner",
   brand: Brand.find_or_create_by(name: "Klairs"),
   user: user1
 )
@@ -44,7 +44,7 @@ embryolisse = Product.find_or_create_by(
   price_cents: "28.00",
   link: "https://www.dermstore.com/product_Lait+Creme+Concentre_51945.htm",
   repurchase: :yes,
-  product_type: :moisturizer,
+  product_type: "moisturizer",
   brand: Brand.find_or_create_by(name: "Embryolisse"),
   user: user1
 )
@@ -59,7 +59,7 @@ snail_mucin = Product.find_or_create_by(
   price_cents: "19.00",
   link: "https://sokoglam.com/products/cosrx-advanced-snail-96-mucin-power-essence",
   repurchase: :yes,
-  product_type: :serum,
+  product_type: "serum",
   brand: Brand.find_or_create_by(name: "CosRX"),
   user: user2
 )
@@ -76,8 +76,58 @@ Product.find_or_create_by(
   comment: "I've heard really good things about how gentle it is, and want to try it.",
   price_cents: "20.00",
   link: "https://jordansamuelskin.com/products/plie-treatment-cleanser",
-  product_type: :water_based_cleanser,
+  product_type: "water based cleanser",
   wishlist: true,
   brand: Brand.find_or_create_by(name: "Jordan Samuels Skin"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "The Performance Cream",
+  comment: "I'm looking for a good moisturizer still, but I trust anything he makes, so I'm curious to try this.",
+  price_cents: "32.00",
+  link: "https://jordansamuelskin.com/products/",
+  product_type: "moisturizer",
+  wishlist: true,
+  brand: Brand.find_or_create_by(name: "Jordan Samuels Skin"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "5.5 Toner",
+  comment: "I really love this, the feel is so nice.",
+  price_cents: "18.00",
+  link: "https://sokoglam.com/",
+  product_type: "toner",
+  repurchase: :yes,
+  rating: 9,
+  wishlist: false,
+  brand: Brand.find_or_create_by(name: "ACWell"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "Honey Ceramide Cream",
+  comment: "It's thicker, but it's really good",
+  price_cents: "22.00",
+  link: "https://cosrx.com/",
+  product_type: "moisturizer",
+  wishlist: false,
+  repurchase: :maybe,
+  rating: 6,
+  brand: Brand.find_or_create_by(name: "CosRX"),
+  user: user2
+)
+
+Product.find_or_create_by(
+  name: "Liquid Gold",
+  comment: "Love this. It's a great lightweight moisturizer for summer and a good serum for winter.",
+  price_cents: "24.00",
+  link: "https://stratia.com/",
+  product_type: "moisturizer",
+  wishlist: false,
+  repurchase: :yes,
+  rating: 10,
+  brand: Brand.find_or_create_by(name: "Stratia"),
   user: user2
 )

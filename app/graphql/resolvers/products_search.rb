@@ -22,7 +22,7 @@ class Resolvers::ProductsSearch
   end
 
   def normalize_filters(value, branches = [])
-    scope = Product.all
+    scope = Product.where("wishlist = false")
     scope = scope.where('lower(name) LIKE ?', "%#{value['name_contains'].downcase}%") if value['name_contains']
     scope = scope.where("id = #{value['id_contains']}") if value['id_contains']
     

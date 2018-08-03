@@ -7,7 +7,8 @@ Types::ProductType = GraphQL::ObjectType.define do
   field :price_cents, types.String
   field :link, types.String
   field :repurchase, types.Int
-  field :product_type, types.Int
+  field :rating, types.Int
+  field :product_type, types.String
   field :wishlist, types.Boolean
   field :brand, !Types::BrandType
   field :user, !Types::UserType
