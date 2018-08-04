@@ -22,3 +22,9 @@ li {
 a {
   color: #42b983;
 }
+
+.main-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}

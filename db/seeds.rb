@@ -1,20 +1,12 @@
 Product.destroy_all
 User.destroy_all
+Ingredient.destroy_all
 
-snail_mucin_ingredients = [
-  "Snail Secretion Filtrate", 
-  "Betaine", 
-  "Butylene Glycol", 
-  "1,2-Hexanediol", 
-  "Sodium Hyaluronate", 
-  "Panthenol", 
-  "Arginine", 
-  "Allantoin", 
-  "Ethyl Hexanediol", 
-  "Sodium Polyacrylate", 
-  "Carbomer", 
-  "Phenoxyethanol"
-]
+snail_mucin_ingredients = ["Snail Secretion Filtrate", "Betaine", "Butylene Glycol", "1,2-Hexanediol", "Sodium Hyaluronate", "Panthenol", "Arginine", "Allantoin", "Ethyl Hexanediol", "Sodium Polyacrylate", "Carbomer", "Phenoxyethanol"]
+honey_ceramide_ingredients = ["Honey extract", " butylene glycol", " glycerin", " caprylic/capric triglyceride", " helianthus annuus (sunflower) seed oil", " betaine", " cetearyl olivate", " sorbitan olivate", " dimethicone", " 1", "2-hexanediol", " beeswax", " elaeis guineensis(palm) oil", " elaeis guineensis(palm) kernel oil", " hordeum vulgare leaf extract", " cetearyl alcohol ydroxyethyl acrylate/sodium acryloyldimethyl taurate", " copolymer", " ethylhexylglycerin", " sodium hyaluronate", " ceramide 3", " xanthan gum", " adenosine"]
+
+snail_mucin_tags = ["hydrating", "antimicrobial", "repairing"]
+klairs_toner_tags = ["hydrating", "essential oils", "brightening"]
 
 user1 = User.new(email: "hello@nothanks.com", username: 'user1', password: '123456')
 user1.save!
@@ -34,9 +26,6 @@ klairs_toner = Product.find_or_create_by(
   user: user1
 )
 
-klairs_toner.tags.find_or_create_by(name: "hydrating")
-klairs_toner.tags.find_or_create_by(name: "brightening")
-
 embryolisse = Product.find_or_create_by(
   name: "Lait Creme Concentre",
   comment: "Love this cream. A perfect cream.",
@@ -49,9 +38,6 @@ embryolisse = Product.find_or_create_by(
   user: user1
 )
 
-embryolisse.tags.find_or_create_by(name: "moisturizing")
-embryolisse.tags.find_or_create_by(name: "repairing")
-
 snail_mucin = Product.find_or_create_by(
   name: "Advanced Snail 96 Mucin Power Essence",
   comment: "A very good serum! Not sure how much it does, but it's nice and non-irritating.",
@@ -63,13 +49,6 @@ snail_mucin = Product.find_or_create_by(
   brand: Brand.find_or_create_by(name: "CosRX"),
   user: user2
 )
-
-snail_mucin.tags.find_or_create_by(name: "repairing")
-snail_mucin.ingredients.find_or_create_by(name: "hydrating")
-
-snail_mucin_ingredients.each do |ingredient_name|
-  snail_mucin.ingredients.create!(name: ingredient_name)
-end
 
 Product.find_or_create_by(
   name: "The After Show Treatment Cleanser",
@@ -106,7 +85,7 @@ Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+honey_ceramide = Product.find_or_create_by(
   name: "Honey Ceramide Cream",
   comment: "It's thicker, but it's really good",
   price_cents: "22.00",
@@ -183,3 +162,23 @@ Product.find_or_create_by(
   brand: Brand.find_or_create_by(name: "Barbara Sturm"),
   user: user2
 )
+
+snail_mucin_ingredients.each do |ingredient_name|
+  i = Ingredient.find_or_create_by!(name: ingredient_name)
+  snail_mucin.ingredients << i
+end
+
+honey_ceramide_ingredients.each do |ingredient_name|
+  i = Ingredient.find_or_create_by!(name: ingredient_name)
+  honey_ceramide.ingredients << i
+end
+
+snail_mucin_tags.each do |tag_name|
+  t = Tag.find_or_create_by!(name: tag_name)
+  snail_mucin.tags << t
+end
+
+klairs_toner_tags.each do |tag_name|
+  t = Tag.find_or_create_by!(name: tag_name)
+  klairs_toner.tags << t
+end

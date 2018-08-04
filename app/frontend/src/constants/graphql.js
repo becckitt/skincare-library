@@ -13,6 +13,12 @@ export const ALL_PRODUCTS_QUERY = gql`{
     brand {
       name
     }
+    ingredients {
+      name
+    }
+    tags {
+      name
+    }
   }
 }`
 
@@ -40,6 +46,12 @@ export const PRODUCT_SEARCH_QUERY = gql`
       rating
       repurchase
       brand {
+        name
+      }
+      ingredients {
+        name
+      }
+      tags {
         name
       }
     }

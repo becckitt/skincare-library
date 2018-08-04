@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_181006) do
+ActiveRecord::Schema.define(version: 2018_08_04_022213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,22 +27,13 @@ ActiveRecord::Schema.define(version: 2018_08_03_181006) do
     t.string "name"
   end
 
-  create_table "product_ingredients", force: :cascade do |t|
+  create_table "ingredients_products", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_product_ingredients_on_ingredient_id"
-    t.index ["product_id"], name: "index_product_ingredients_on_product_id"
-  end
-
-  create_table "product_tags", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_tags_on_product_id"
-    t.index ["tag_id"], name: "index_product_tags_on_tag_id"
+    t.index ["ingredient_id"], name: "index_ingredients_products_on_ingredient_id"
+    t.index ["product_id"], name: "index_ingredients_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -59,6 +50,15 @@ ActiveRecord::Schema.define(version: 2018_08_03_181006) do
     t.boolean "wishlist", default: false
     t.integer "brand_id"
     t.integer "user_id"
+  end
+
+  create_table "products_tags", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_products_tags_on_product_id"
+    t.index ["tag_id"], name: "index_products_tags_on_tag_id"
   end
 
   create_table "routines", force: :cascade do |t|

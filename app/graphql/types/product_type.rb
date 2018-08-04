@@ -12,4 +12,6 @@ Types::ProductType = GraphQL::ObjectType.define do
   field :wishlist, types.Boolean
   field :brand, !Types::BrandType
   field :user, !Types::UserType
+  field :ingredients, types[Types::IngredientType]
+  field :tags, types[Types::TagType]
 end
