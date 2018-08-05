@@ -6,6 +6,8 @@ import AppSignup from '@/pages/AppSignup'
 import Dashboard from '@/pages/Dashboard'
 import BrandProducts from '@/pages/BrandProducts'
 import ProductView from '@/pages/ProductView'
+import IngredientView from '@/pages/IngredientView'
+import TagView from '@/pages/TagView'
 import firebase from 'firebase'
 import 'firebase/auth'
 
@@ -40,6 +42,22 @@ let router = new Router({
       path: '/brand/:brandName',
       name: 'brand',
       component: BrandProducts,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/ingredient/:ingredientName',
+      name: 'ingredient',
+      component: IngredientView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/tag/:tagName',
+      name: 'tag',
+      component: TagView,
       meta: {
         requiresAuth: true
       }

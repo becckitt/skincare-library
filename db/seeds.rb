@@ -3,7 +3,7 @@ User.destroy_all
 Ingredient.destroy_all
 
 snail_mucin_ingredients = ["Snail Secretion Filtrate", "Betaine", "Butylene Glycol", "1,2-Hexanediol", "Sodium Hyaluronate", "Panthenol", "Arginine", "Allantoin", "Ethyl Hexanediol", "Sodium Polyacrylate", "Carbomer", "Phenoxyethanol"]
-honey_ceramide_ingredients = ["Honey extract", " butylene glycol", " glycerin", " caprylic/capric triglyceride", " helianthus annuus (sunflower) seed oil", " betaine", " cetearyl olivate", " sorbitan olivate", " dimethicone", " 1", "2-hexanediol", " beeswax", " elaeis guineensis(palm) oil", " elaeis guineensis(palm) kernel oil", " hordeum vulgare leaf extract", " cetearyl alcohol ydroxyethyl acrylate/sodium acryloyldimethyl taurate", " copolymer", " ethylhexylglycerin", " sodium hyaluronate", " ceramide 3", " xanthan gum", " adenosine"]
+honey_ceramide_ingredients = ["Honey extract", "butylene glycol", "glycerin", "caprylic/capric triglyceride", "helianthus annuus (sunflower) seed oil", "betaine", "cetearyl olivate", "sorbitan olivate", "dimethicone", "2-hexanediol", "beeswax", "elaeis guineensis(palm) oil", "elaeis guineensis(palm) kernel oil", "hordeum vulgare leaf extract", "cetearyl alcohol ydroxyethyl acrylate/sodium acryloyldimethyl taurate", "copolymer", "ethylhexylglycerin", "sodium hyaluronate", "ceramide 3", "xanthan gum", "adenosine"]
 
 snail_mucin_tags = ["hydrating", "antimicrobial", "repairing"]
 klairs_toner_tags = ["hydrating", "essential oils", "brightening"]

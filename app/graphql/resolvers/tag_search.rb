@@ -1,20 +1,19 @@
 require 'search_object/plugin/graphql'
 
-class Resolvers::ProductsSearch
+class Resolvers::TagSearch
   include SearchObject.module(:graphql)
 
-  scope { Product.where(wishlist: false) }
-  type !types[Types::ProductType]
+  scope { Tag.all }
+  type !types[Types::TagType]
 
-  ProductFilter = GraphQL::InputObjectType.define do
-    name 'ProductFilter'
+  TagFilter = GraphQL::InputObjectType.define do
+    name 'TagFilter'
 
-    argument :OR, -> { types[ProductFilter] }
+    argument :OR, -> { types[TagFilter] }
     argument :name_contains, types.String
-    argument :id_contains, types.ID
   end
 
-  option :filter, type: ProductFilter, with: :apply_filter
+  option :filter, type: TagFilter, with: :apply_filter
 
   def apply_filter(scope, value)
     branches = normalize_filters(value).reduce { |a, b| a.or(b) }
@@ -22,9 +21,8 @@ class Resolvers::ProductsSearch
   end
 
   def normalize_filters(value, branches = [])
-    scope = Product.where(wishlist: false)
+    scope = Tag.all
     scope = scope.where('lower(name) LIKE ?', "%#{value['name_contains'].downcase}%") if value['name_contains']
-    scope = scope.where("id = #{value['id_contains']}") if value['id_contains']
     
     branches << scope
 

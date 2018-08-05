@@ -56,3 +56,29 @@ export const PRODUCT_SEARCH_QUERY = gql`
       }
     }
 }`
+
+export const INGREDIENT_SEARCH_QUERY = gql`
+  query ingredientSearch($filter: String!) {
+    ingredientSearch(filter: {name_contains: $filter}) {
+      name
+      products {
+        id
+        name
+        comment
+      }
+    }
+  }
+`
+
+export const TAG_SEARCH_QUERY = gql`
+  query tagSearch($filter: String!) {
+    tagSearch(filter: {name_contains: $filter}) {
+      name
+      products {
+        id
+        name
+        comment
+      }
+    }
+  }
+`

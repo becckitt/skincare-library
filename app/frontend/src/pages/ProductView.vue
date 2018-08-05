@@ -22,7 +22,7 @@
         <p class="detail-label">Re-buy?</p>
         <p> {{ product.repurchase }} </p>
       </div>
-      <div class="detail">
+      <div class="detail long-section">
         <p class="detail-label">Notes</p>
         <p> {{ product.comment }} </p>
       </div>
@@ -80,7 +80,7 @@ export default {
   text-align: left;
 }
 
-.detail:last-of-type {
+.detail.long-section {
   grid-column: 1/2;
 }
 
