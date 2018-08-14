@@ -9,18 +9,5 @@ module.exports = {
   use: [{
     loader: 'vue-loader',
     options: { extractCSS }
-  }],
-  module: {
-    rules: [{
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader', {
-        loader: 'style-resources-loader',
-        options: {
-          patterns: [
-            path.resolve(__dirname, 'app/skincare-frontend/src/assets/stylesheets/*.scss')
-          ]
-        }
-      }]
-    }]
-  }
+  }]
 }

@@ -7681,7 +7681,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-style-resources-loader@^1.2.1:
+style-resources-loader@^1.1.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/style-resources-loader/-/style-resources-loader-1.2.1.tgz#7679d5dc2f27046b2fc2b83c1d5b6c1b8a9b820c"
   dependencies:
@@ -8257,6 +8257,10 @@ vue-cli-plugin-apollo@^0.16.2:
     nodemon "^1.18.3"
     subscriptions-transport-ws "^0.9.14"
     ts-node "^7.0.0"
+
+vue-cli-plugin-style-resources-loader@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-style-resources-loader/-/vue-cli-plugin-style-resources-loader-0.1.2.tgz#b33ddab94b199a7f5f3d246d15f51dda7be29ed9"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"

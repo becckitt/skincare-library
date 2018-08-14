@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import firebase from 'firebase'
 import { createProvider } from './vue-apollo'
+import './assets/stylesheets/main.css'
 let app
 
 const config = {
