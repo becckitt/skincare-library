@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase'
-import './assets/main.css'
 import { createProvider } from './vue-apollo'
 let app
 
