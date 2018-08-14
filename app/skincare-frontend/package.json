@@ -9,9 +9,6 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.2",
@@ -19,9 +16,11 @@
     "firebase": "^5.3.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "vue-apollo": "^3.0.0-beta.19",
+    "underscore": "^1.9.1",
+    "vue": "^2.5.17",
     "vue-good-table": "^2.12.2",
-    "underscore": "^1.9.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
@@ -31,8 +30,10 @@
     "@vue/eslint-config-standard": "^3.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
     "chai": "^4.1.2",
+    "graphql-tag": "^2.9.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "vue-cli-plugin-apollo": "^0.16.2",
     "vue-template-compiler": "^2.5.17"
   }
 }

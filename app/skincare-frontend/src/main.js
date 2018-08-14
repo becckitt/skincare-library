@@ -3,13 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import { setContext } from 'apollo-link-context'
-import VueApollo from 'vue-apollo'
 import firebase from 'firebase'
 import './assets/main.css'
+import { createProvider } from './vue-apollo'
 let app
 
 const config = {
@@ -25,37 +21,13 @@ firebase.initializeApp(config)
 
 Vue.config.productionTip = false
 
-const httpLink = new HttpLink({
-  uri: 'http://localhost:3000/graphql'
-})
-
-const middlewareLink = setContext(() => ({
-  headers: {
-    authorization: `*`
-  }
-}))
-
-const link = middlewareLink.concat(httpLink)
-
-const apolloClient = new ApolloClient({
-  link: link,
-  cache: new InMemoryCache(),
-  connectToDevTools: true
-})
-
-Vue.use(VueApollo)
-
-const apolloProvider = new VueApollo({
-  defaultClient: apolloClient
-})
-
 /* eslint-disable no-new */
 firebase.auth().onAuthStateChanged(function (user) {
   if (!app) {
     new Vue({
       el: '#app',
       router,
-      provide: apolloProvider.provide(),
+      provide: createProvider().provide(),
       render: h => h(App)
     }).$mount('#app')
   }
