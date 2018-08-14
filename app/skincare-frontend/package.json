@@ -1,0 +1,43 @@
+{
+  "name": "skincare-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.2.5",
+    "apollo-client": "^2.3.5",
+    "apollo-link": "^1.2.2",
+    "apollo-link-http": "^1.5.4",
+    "firebase": "^5.3.0",
+    "firebaseui": "3.3.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "underscore": "^1.9.1",
+    "vue": "^2.5.17",
+    "vue-apollo": "3.0.0-beta.19",
+    "vue-good-table": "^2.12.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-plugin-unit-mocha": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "@vue/eslint-config-standard": "^3.0.0",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "chai": "^4.1.2",
+    "graphql-tag": "^2.9.2",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-resources-loader": "^1.1.0",
+    "vue-cli-plugin-apollo": "^0.16.2",
+    "vue-cli-plugin-style-resources-loader": "^0.1.2",
+    "vue-template-compiler": "^2.5.17"
+  }
+}

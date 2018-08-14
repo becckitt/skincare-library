@@ -20,6 +20,9 @@ libreadline.7.0.dylib
 *.DS_Store
 /public/packs
 /public/packs-test
-/node_modules
+node_modules
 yarn-debug.log*
 .yarn-integrity
+npm-debug.log*
+yarn-error.log*
+.vscode
