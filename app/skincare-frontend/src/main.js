@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from './backend/vue-axios'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
@@ -56,10 +55,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     new Vue({
       el: '#app',
       router,
-      axios,
       provide: apolloProvider.provide(),
-      components: { App },
-      template: '<App/>'
-    })
+      render: h => h(App)
+    }).$mount('#app')
   }
 })
