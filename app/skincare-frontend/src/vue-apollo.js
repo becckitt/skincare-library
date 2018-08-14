@@ -3,6 +3,7 @@ import VueApollo from 'vue-apollo'
 import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client'
 import { HttpLink } from 'apollo-link-http'
 import { setContext } from 'apollo-link-context'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 // Install the vue plugin
 Vue.use(VueApollo)
@@ -43,10 +44,10 @@ const defaultOptions = {
   ssr: false,
 
   // Override default http link
-  link: link
+  link: link,
 
   // Override default cache
-  // cache: myCache
+  cache: new InMemoryCache()
 
   // Override the way the Authorization header is set
   // getAuth: (tokenName) => ...
