@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Products with {{ ingredientName }}</h1>
-    <div v-for="product in products" :key="product">
+    <div v-for="product in products" :key="product.id">
       <h4>{{product.name}}</h4>
       <p>{{product.comment}}</p>
       <router-link :to="{name: 'product', params: { id: product.id }}">View product</router-link>
