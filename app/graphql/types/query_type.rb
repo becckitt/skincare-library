@@ -6,4 +6,5 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :ingredientSearch, function: Resolvers::IngredientSearch
   field :tagSearch, function: Resolvers::TagSearch
   field :routineSearch, function: Resolvers::RoutineSearch
+  field :wishlistSearch, function: Resolvers::WishlistSearch
 end

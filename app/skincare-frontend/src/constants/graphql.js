@@ -110,3 +110,13 @@ export const ROUTINE_SEARCH_QUERY = gql`
     }
   }
 `
+
+export const WISHLIST_QUERY = gql`
+  query wishlistSearch {
+    wishlistSearch {
+      id
+      name
+      comment
+    }
+  }
+`

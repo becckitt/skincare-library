@@ -10,6 +10,7 @@ import IngredientView from '@/views/IngredientView'
 import TagView from '@/views/TagView'
 import RoutineView from '@/views/RoutineView'
 import RoutineIndex from '@/views/RoutineIndex'
+import Wishlist from '@/views/Wishlist'
 import firebase from 'firebase'
 import 'firebase/auth'
 
@@ -84,6 +85,14 @@ let router = new Router({
       path: '/routines',
       name: 'routines',
       component: RoutineIndex,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/wishlist',
+      name: 'wishlist',
+      component: Wishlist,
       meta: {
         requiresAuth: true
       }
