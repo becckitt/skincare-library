@@ -1,6 +1,7 @@
 Product.destroy_all
 User.destroy_all
 Ingredient.destroy_all
+Routine.destroy_all
 
 snail_mucin_ingredients = ["Snail Secretion Filtrate", "Betaine", "Butylene Glycol", "1,2-Hexanediol", "Sodium Hyaluronate", "Panthenol", "Arginine", "Allantoin", "Ethyl Hexanediol", "Sodium Polyacrylate", "Carbomer", "Phenoxyethanol"]
 honey_ceramide_ingredients = ["Honey extract", "butylene glycol", "glycerin", "caprylic/capric triglyceride", "helianthus annuus (sunflower) seed oil", "betaine", "cetearyl olivate", "sorbitan olivate", "dimethicone", "2-hexanediol", "beeswax", "elaeis guineensis(palm) oil", "elaeis guineensis(palm) kernel oil", "hordeum vulgare leaf extract", "cetearyl alcohol ydroxyethyl acrylate/sodium acryloyldimethyl taurate", "copolymer", "ethylhexylglycerin", "sodium hyaluronate", "ceramide 3", "xanthan gum", "adenosine"]
@@ -72,7 +73,7 @@ Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+acwell_toner = Product.find_or_create_by(
   name: "5.5 Toner",
   comment: "I really love this, the feel is so nice.",
   price_cents: "18.00",
@@ -98,7 +99,7 @@ honey_ceramide = Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+liquid_gold = Product.find_or_create_by(
   name: "Liquid Gold",
   comment: "Love this. It's a great lightweight moisturizer for summer and a good serum for winter.",
   price_cents: "24.00",
@@ -111,7 +112,7 @@ Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+cerave_cleanser = Product.find_or_create_by(
   name: "Hydrating Cleanser",
   comment: "Really gentle cleanser, very nice",
   price_cents: "11.00",
@@ -124,7 +125,7 @@ Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+micellar_water = Product.find_or_create_by(
   name: "Micellar Water",
   comment: "This gets rid of EVERYTHING. So gentle.",
   price_cents: "9.00",
@@ -137,7 +138,7 @@ Product.find_or_create_by(
   user: user2
 )
 
-Product.find_or_create_by(
+eve_lom_cleanser = Product.find_or_create_by(
   name: "Morning Gel Cleanser",
   comment: "I like this, but idk if it's super necessary considering my other cleansers. It does smell good though.",
   price_cents: "60.00",
@@ -182,3 +183,26 @@ klairs_toner_tags.each do |tag_name|
   t = Tag.find_or_create_by!(name: tag_name)
   klairs_toner.tags << t
 end
+
+routine_1 = Routine.create!(
+  user: user1,
+  time_of_day: :am
+)
+
+routine_2 = Routine.create!(
+  user: user1,
+  time_of_day: :pm
+)
+
+routine_1_products = [
+  micellar_water, cerave_cleanser, snail_mucin, liquid_gold
+]
+
+routine_1_products.each { |p| routine_1.products << p }
+
+routine_2_products = [
+  eve_lom_cleanser, acwell_toner, embryolisse
+]
+
+routine_2_products.each { |p| routine_2.products << p }
+  

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_022213) do
+ActiveRecord::Schema.define(version: 2018_08_15_013635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 2018_08_04_022213) do
     t.boolean "wishlist", default: false
     t.integer "brand_id"
     t.integer "user_id"
+    t.integer "routine_id"
+  end
+
+  create_table "products_routines", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "routine_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_products_routines_on_product_id"
+    t.index ["routine_id"], name: "index_products_routines_on_routine_id"
   end
 
   create_table "products_tags", force: :cascade do |t|
@@ -65,6 +75,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_022213) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "time_of_day"
   end
 
   create_table "tags", force: :cascade do |t|

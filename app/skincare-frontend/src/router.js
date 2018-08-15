@@ -8,6 +8,8 @@ import BrandProducts from '@/views/BrandProducts'
 import ProductView from '@/views/ProductView'
 import IngredientView from '@/views/IngredientView'
 import TagView from '@/views/TagView'
+import RoutineView from '@/views/RoutineView'
+import RoutineIndex from '@/views/RoutineIndex'
 import firebase from 'firebase'
 import 'firebase/auth'
 
@@ -39,7 +41,7 @@ let router = new Router({
       }
     },
     {
-      path: '/brand/:brandName',
+      path: '/brands/:brandName',
       name: 'brand',
       component: BrandProducts,
       meta: {
@@ -47,7 +49,7 @@ let router = new Router({
       }
     },
     {
-      path: '/ingredient/:ingredientName',
+      path: '/ingredients/:ingredientName',
       name: 'ingredient',
       component: IngredientView,
       meta: {
@@ -55,7 +57,7 @@ let router = new Router({
       }
     },
     {
-      path: '/tag/:tagName',
+      path: '/tags/:tagName',
       name: 'tag',
       component: TagView,
       meta: {
@@ -66,6 +68,22 @@ let router = new Router({
       path: '/products/:id',
       name: 'product',
       component: ProductView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/routines/:routineId',
+      name: 'routine',
+      component: RoutineView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/routines',
+      name: 'routines',
+      component: RoutineIndex,
       meta: {
         requiresAuth: true
       }

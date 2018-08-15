@@ -82,3 +82,31 @@ export const TAG_SEARCH_QUERY = gql`
     }
   }
 `
+
+export const ALL_ROUTINES_QUERY = gql`
+  query routineSearch {
+    routineSearch {
+      id
+      time_of_day
+      products {
+        id
+        name
+        comment
+      }
+    }
+  }
+`
+
+export const ROUTINE_SEARCH_QUERY = gql`
+  query routineSearch($filter: String!) {
+    routineSearch(filter: {id_contains: $filter}) {
+      id
+      time_of_day
+      products {
+        id
+        name
+        comment
+      }
+    }
+  }
+`
