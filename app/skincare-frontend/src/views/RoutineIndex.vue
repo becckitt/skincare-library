@@ -26,11 +26,6 @@ export default {
         return data.routineSearch
       }
     }
-  },
-  computed: {
-    timeOfDay (val) {
-      return parseInt(val) === 0 ? 'am' : 'pm'
-    }
   }
 }
 </script>
