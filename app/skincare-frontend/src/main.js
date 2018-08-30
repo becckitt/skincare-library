@@ -6,7 +6,16 @@ import router from './router'
 import firebase from 'firebase'
 import { createProvider } from './vue-apollo'
 import './assets/stylesheets/main.css'
+import axios from 'axios'
+
 let app
+Vue.http = Vue.prototype.$http = axios.create({
+  baseURL: 'http://localhost:3000',
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json'
+  }
+})
 
 const config = {
   apiKey: 'AIzaSyByet0rN7obtN6XkgHyU1n_MDMQm_ii668',
@@ -30,5 +39,14 @@ firebase.auth().onAuthStateChanged(function (user) {
       provide: createProvider().provide(),
       render: h => h(App)
     }).$mount('#app')
+  }
+
+  if (user) {
+    user.getIdToken().then((jwtToken) => {
+      Vue.http.post('/auth', {
+        email: user.email,
+        jwt: jwtToken
+      })
+    })
   }
 })
