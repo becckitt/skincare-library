@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/auth', to: 'user#authenticate'
+  post '/authenticate', to: 'authentication#authenticate'
 
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"

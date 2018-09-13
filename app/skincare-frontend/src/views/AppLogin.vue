@@ -27,6 +27,20 @@ export default {
     login: function () {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
         this.$router.push('dashboard')
+        
+        // send token to endpoint in app
+        // need to do something to let graphql know,
+        // but maybe that happens backend?
+        // or does it happen in apollo
+
+        this.$http.post('localhost:3000/authenticate', credentials).then((response) => {
+          window.localStorage.setItem('AUTH_TOKEN', response.data.token)
+          // window.localStorage.setItem('auth-user', JSON.stringify(response.data.user))
+        }).catch((errors) => {
+          console.log('login failed: ' + errors)
+        })
+      }).catch((errors) => {
+        console.log('firebase login failed: ' + errors)
       })
     }
   }

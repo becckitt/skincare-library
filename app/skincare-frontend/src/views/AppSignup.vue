@@ -26,6 +26,7 @@ export default {
   methods: {
     signup: function () {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(() => {
+        // do the create user mutation
         this.$router.replace('dashboard')
       })
     }
