@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { INGREDIENT_SEARCH_QUERY } from '@/constants/graphql'
+import { INGREDIENT_SEARCH_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'IngredientView',

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { BRAND_SEARCH_QUERY } from '@/constants/graphql'
+import { BRAND_SEARCH_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'BrandProducts',

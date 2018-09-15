@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ROUTINE_SEARCH_QUERY } from '@/constants/graphql'
+import { ROUTINE_SEARCH_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'Routine',

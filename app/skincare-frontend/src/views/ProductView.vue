@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import { PRODUCT_SEARCH_QUERY } from '@/constants/graphql'
+import { PRODUCT_SEARCH_QUERY } from '@/constants/graphql_queries'
 import { pluck } from 'underscore'
 
 export default {

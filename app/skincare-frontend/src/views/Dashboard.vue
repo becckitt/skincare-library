@@ -6,7 +6,7 @@
 
 <script>
 import ProductsTable from '@/components/ProductsTable'
-import { ALL_PRODUCTS_QUERY } from '@/constants/graphql'
+import { ALL_PRODUCTS_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'Dashboard',

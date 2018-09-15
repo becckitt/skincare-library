@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { ALL_ROUTINES_QUERY } from '@/constants/graphql'
+import { ALL_ROUTINES_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'Routines',

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { WISHLIST_QUERY } from '@/constants/graphql'
+import { WISHLIST_QUERY } from '@/constants/graphql_queries'
 
 export default {
   name: 'Wishlist',
