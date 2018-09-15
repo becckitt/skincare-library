@@ -32,6 +32,11 @@ gem 'search_object_graphql', '0.1'
 
 gem 'webpacker', '~> 3.5'
 gem 'jwt'
+gem 'redis'
+gem 'redis-namespace'
+gem 'httparty'
+
+# might be able to get rid of this vv
 gem 'simple_command'
 
 group :development, :test do
