@@ -9,13 +9,14 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 Vue.use(VueApollo)
 
 // Name of the localStorage item
+// maybe store firebase id token here
 const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:3000/graphql'
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:3000/graphql'
+  uri: httpEndpoint
 })
 
 const middlewareLink = setContext(() => ({
