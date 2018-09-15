@@ -42,10 +42,14 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 
   if (user) {
-    user.getIdToken().then((jwtToken) => {
-      Vue.http.post('/auth', {
-        email: user.email,
-        jwt: jwtToken
+    user.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+      const header = { Authorization: `${idToken}` }
+      Vue.http.post('/authenticate', { headers: header }).then((response) => {
+        // window.localStorage.setItem('AUTH_TOKEN', response.data.token)
+        // this.$router.push('dashboard')
+        console.log('login was maybe a success')
+      }).catch((error) => {
+        console.log('post failed in main: ' + error)
       })
     })
   }
