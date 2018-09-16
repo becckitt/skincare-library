@@ -4,16 +4,16 @@ FactoryBot.define do
   sequence(:ingredient_id) {|n| n }
 
   factory :product do
-    name "Advanced Snail 96 Mucin Power Essence"
+    name { 'Advanced Snail 96 Mucin Power Essence' }
     brand { create :brand }
     user { create :user }
-    comment "Super nice and moisturizing, I think it works but will wait and see if I notice a difference after I run out"
-    rating 8
-    price_cents 19
-    repurchase :yes
-    product_type :serum
-    link "https://sokoglam.com/products/cosrx-advanced-snail-96-mucin-power-essence"
-    wishlist true
+    comment { 'Super nice and moisturizing, I think it works but will wait and see if I notice a difference after I run out' }
+    rating { 8 }
+    price_cents { 19 }
+    repurchase { :yes }
+    product_type { :serum }
+    link { 'https://sokoglam.com/products/cosrx-advanced-snail-96-mucin-power-essence' }
+    wishlist { true }
 
     factory :product_with_tags do
       after(:create) do |product|
@@ -36,7 +36,7 @@ FactoryBot.define do
   end
 
   factory :tag do
-    name "hydrating"
+    name { 'hydrating' }
   end
 
   factory :product_ingredient do
@@ -45,17 +45,16 @@ FactoryBot.define do
   end
 
   factory :ingredient do
-    name "alcohol"
+    name { 'alcohol' }
   end
 
   factory :brand do
-    name "CosRx"
+    name { 'CosRx' }
   end
 
   factory :user do
-    username "Joe10"
-    email "joe10@gmail.com"
-    password "notpassword"
+    email { 'joe10@gmail.com' }
+    firebase_id { 'V9MyKB5nRdamIjb8ATdAuYYyR1H2' }
   end
 
   factory :routine do
