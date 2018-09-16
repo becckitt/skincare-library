@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :tags
   has_and_belongs_to_many :ingredients
   has_and_belongs_to_many :routines
+  belongs_to :shelf, optional: true
   belongs_to :brand
   belongs_to :user
 end

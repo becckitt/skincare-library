@@ -61,4 +61,8 @@ FactoryBot.define do
   factory :routine do
     
   end
+
+  factory :shelf do
+    
+  end
 end

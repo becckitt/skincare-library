@@ -2,6 +2,8 @@ Product.destroy_all
 User.destroy_all
 Ingredient.destroy_all
 Routine.destroy_all
+Tag.destroy_all
+Shelf.destroy_all
 
 snail_mucin_ingredients = ["Snail Secretion Filtrate", "Betaine", "Butylene Glycol", "1,2-Hexanediol", "Sodium Hyaluronate", "Panthenol", "Arginine", "Allantoin", "Ethyl Hexanediol", "Sodium Polyacrylate", "Carbomer", "Phenoxyethanol"]
 honey_ceramide_ingredients = ["Honey extract", "butylene glycol", "glycerin", "caprylic/capric triglyceride", "helianthus annuus (sunflower) seed oil", "betaine", "cetearyl olivate", "sorbitan olivate", "dimethicone", "2-hexanediol", "beeswax", "elaeis guineensis(palm) oil", "elaeis guineensis(palm) kernel oil", "hordeum vulgare leaf extract", "cetearyl alcohol ydroxyethyl acrylate/sodium acryloyldimethyl taurate", "copolymer", "ethylhexylglycerin", "sodium hyaluronate", "ceramide 3", "xanthan gum", "adenosine"]
@@ -14,6 +16,8 @@ user1.save!
 
 user2 = User.new(email: "testing@example.com", username: 'user2', password: '654321')
 user2.save!
+
+shelf = Shelf.create!
 
 klairs_toner = Product.find_or_create_by(
   name: "Supple Preparation Toner",
@@ -36,7 +40,8 @@ embryolisse = Product.find_or_create_by(
   repurchase: :yes,
   product_type: "moisturizer",
   brand: Brand.find_or_create_by(name: "Embryolisse"),
-  user: user1
+  user: user1,
+  shelf: shelf
 )
 
 snail_mucin = Product.find_or_create_by(
@@ -48,7 +53,8 @@ snail_mucin = Product.find_or_create_by(
   repurchase: :yes,
   product_type: "serum",
   brand: Brand.find_or_create_by(name: "CosRX"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 Product.find_or_create_by(
@@ -83,7 +89,8 @@ acwell_toner = Product.find_or_create_by(
   rating: 9,
   wishlist: false,
   brand: Brand.find_or_create_by(name: "ACWell"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 honey_ceramide = Product.find_or_create_by(
@@ -96,7 +103,8 @@ honey_ceramide = Product.find_or_create_by(
   repurchase: :maybe,
   rating: 6,
   brand: Brand.find_or_create_by(name: "CosRX"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 liquid_gold = Product.find_or_create_by(
@@ -109,7 +117,8 @@ liquid_gold = Product.find_or_create_by(
   repurchase: :yes,
   rating: 10,
   brand: Brand.find_or_create_by(name: "Stratia"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 cerave_cleanser = Product.find_or_create_by(
@@ -122,7 +131,8 @@ cerave_cleanser = Product.find_or_create_by(
   repurchase: :yes,
   rating: 7,
   brand: Brand.find_or_create_by(name: "Cerave"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 micellar_water = Product.find_or_create_by(
@@ -135,7 +145,8 @@ micellar_water = Product.find_or_create_by(
   repurchase: :yes,
   rating: 10,
   brand: Brand.find_or_create_by(name: "Garnier"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 eve_lom_cleanser = Product.find_or_create_by(
@@ -148,7 +159,8 @@ eve_lom_cleanser = Product.find_or_create_by(
   repurchase: :no,
   rating: 5,
   brand: Brand.find_or_create_by(name: "Eve Lom"),
-  user: user2
+  user: user2,
+  shelf: shelf
 )
 
 Product.find_or_create_by(
