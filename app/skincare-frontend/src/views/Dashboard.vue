@@ -6,7 +6,7 @@
 
 <script>
 import ProductsTable from '@/components/ProductsTable'
-import { ALL_PRODUCTS_QUERY } from '@/constants/graphql_queries'
+import { AllProducts } from '../graphql/queries/products.graphql'
 
 export default {
   name: 'Dashboard',
@@ -21,7 +21,7 @@ export default {
   },
   apollo: {
     products: {
-      query: ALL_PRODUCTS_QUERY,
+      query: AllProducts,
       update (data) {
         return data.allProducts
       }

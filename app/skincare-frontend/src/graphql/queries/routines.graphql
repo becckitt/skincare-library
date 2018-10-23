@@ -1,0 +1,23 @@
+query AllRoutines {
+  routineSearch {
+    id
+    time_of_day
+    products {
+      id
+      name
+      comment
+    }
+  }
+}
+
+query RoutineSearch($filter: String!) {
+  routineSearch(filter: {id_contains: $filter}) {
+    id
+    time_of_day
+    products {
+      id
+      name
+      comment
+    }
+  }
+}

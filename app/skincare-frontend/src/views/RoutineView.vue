@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ROUTINE_SEARCH_QUERY } from '@/constants/graphql_queries'
+import { RoutineSearch } from '../graphql/queries/routines.graphql'
 
 export default {
   name: 'Routine',
@@ -23,7 +23,7 @@ export default {
   },
   apollo: {
     routineData: {
-      query: ROUTINE_SEARCH_QUERY,
+      query: RoutineSearch,
       variables () {
         return {
           filter: this.queryParam

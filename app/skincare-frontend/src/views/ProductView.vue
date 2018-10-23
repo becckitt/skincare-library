@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import { PRODUCT_SEARCH_QUERY } from '@/constants/graphql_queries'
+import { ProductSearch } from '../graphql/queries/products.graphql'
 import { pluck } from 'underscore'
 
 export default {
@@ -51,7 +51,7 @@ export default {
   },
   apollo: {
     product: {
-      query: PRODUCT_SEARCH_QUERY,
+      query: ProductSearch,
       variables () {
         return {
           id: this.queryParam

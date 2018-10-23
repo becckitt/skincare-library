@@ -1,0 +1,10 @@
+query IngredientSearch($filter: String!) {
+  ingredientSearch(filter: {name_contains: $filter}) {
+    name
+    products {
+      id
+      name
+      comment
+    }
+  }
+}

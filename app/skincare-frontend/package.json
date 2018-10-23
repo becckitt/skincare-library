@@ -18,9 +18,10 @@
     "firebaseui": "3.3.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "subscriptions-transport-ws": "^0.9.15",
     "underscore": "^1.9.1",
     "vue": "^2.5.17",
-    "vue-apollo": "3.0.0-beta.19",
+    "vue-apollo": "3.0.0-beta.25",
     "vue-good-table": "^2.12.2",
     "vue-router": "^3.0.1"
   },
@@ -36,7 +37,7 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "style-resources-loader": "^1.1.0",
-    "vue-cli-plugin-apollo": "^0.16.2",
+    "vue-cli-plugin-apollo": "^0.17.0",
     "vue-cli-plugin-style-resources-loader": "^0.1.2",
     "vue-template-compiler": "^2.5.17"
   }
