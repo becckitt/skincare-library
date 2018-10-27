@@ -28,11 +28,17 @@
       </div>
       <div class="detail">
         <p class="detail-label">Ingredients</p>
-        <p> {{ ingredients }} </p>
+        <p v-for="(ingredient, index) in ingredients" :key="ingredient" class="link-list--item">
+          <router-link :to="{ name: 'ingredient', params: { ingredientName: ingredient }}">{{ ingredient }}</router-link>
+          <span v-if="index+1 < ingredients.length">,</span>
+        </p>
       </div>
       <div class="detail">
         <p class="detail-label">Tags</p>
-        <p> {{ tags }} </p>
+        <p v-for="(tag, index) in tags" :key="tag"  class="link-list--item">
+          <router-link :to="{ name: 'tag', params: { tagName: tag }}">{{ tag }}</router-link>
+          <span v-if="index+1 < tags.length">, </span>
+        </p>
       </div>
     </div>
   </div>
@@ -86,5 +92,9 @@ export default {
 
 .detail-label {
   font-weight: bold;
+}
+
+.link-list--item {
+  display: inline;
 }
 </style>
