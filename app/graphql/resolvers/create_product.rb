@@ -16,7 +16,7 @@ class Resolvers::CreateProduct < GraphQL::Function
 
   def call(_obj, args, _ctx)
     brand = Brand.find_or_create_by(name: args[:brand])
-    user = User.find_by(email: 'hello@beccabarton.com')
+    user = User.find_by(email: args[:user])
     product = Product.find_or_create_by(name: args[:name], brand: brand, user: user)
 
     product.update_attributes(
