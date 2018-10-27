@@ -26,3 +26,6 @@ yarn-debug.log*
 npm-debug.log*
 yarn-error.log*
 .vscode
+*.rdb
+*.byebug_history
+.env

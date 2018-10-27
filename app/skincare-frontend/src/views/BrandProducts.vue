@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { BRAND_SEARCH_QUERY } from '@/constants/graphql'
+import { BrandSearch } from '../graphql/queries/brands.graphql'
 
 export default {
   name: 'BrandProducts',
@@ -22,7 +22,7 @@ export default {
   },
   apollo: {
     brandProducts: {
-      query: BRAND_SEARCH_QUERY,
+      query: BrandSearch,
       variables () {
         return {
           filter: this.queryParam

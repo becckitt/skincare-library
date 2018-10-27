@@ -1,0 +1,10 @@
+query BrandSearch($filter: String!) {
+  brandSearch(filter: {name_contains: $filter}) {
+    name
+    products {
+      id
+      name
+      comment
+    }
+  }
+}

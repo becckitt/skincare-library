@@ -1,0 +1,5 @@
+mutation CreateProduct($name: String!, $comment: String!, $product_type: String!, $price_cents: String!, $link: String!, $rating: String!, $repurchase: String!, $wishlist: String!, $brand: String!, $ingredients: String!, $tags: String!, $user: String!) {
+  createProduct(name: $name, comment: $comment, product_type: $product_type, price_cents: $price_cents, link: $link, rating: $rating, repurchase: $repurchase, wishlist: $wishlist, brand: $brand, ingredients: $ingredients, tags: $tags, user: $user) {
+    id
+  } 
+}

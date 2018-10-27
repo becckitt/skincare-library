@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { TAG_SEARCH_QUERY } from '@/constants/graphql'
+import { TagSearch } from '../graphql/queries/tags.graphql'
 
 export default {
   name: 'TagView',
@@ -22,7 +22,7 @@ export default {
   },
   apollo: {
     tagProducts: {
-      query: TAG_SEARCH_QUERY,
+      query: TagSearch,
       variables () {
         return {
           filter: this.queryParam

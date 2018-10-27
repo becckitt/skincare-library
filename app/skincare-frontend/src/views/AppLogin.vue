@@ -27,6 +27,8 @@ export default {
     login: function () {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(() => {
         this.$router.push('dashboard')
+      }).catch((error) => {
+        console.log('firebase login failed: ' + error)
       })
     }
   }
