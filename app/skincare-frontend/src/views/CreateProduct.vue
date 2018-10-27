@@ -36,12 +36,12 @@
         <div class="detail">
           <!-- ingredients -->
           <label for="ingredients">Ingredients:</label>
-          <input v-model="newProduct.ingredients" id="ingredients" placeholder="ingredients separated by comma">
+          <input v-model="newProduct.ingredients" id="ingredients" placeholder="ingredients, separated by comma">
         </div>
         <div class="detail">
           <!-- tags -->
           <label for="tags">Tags:</label>
-          <input v-model="newProduct.tags" id="tags" placeholder="tags separated by comma">
+          <input v-model="newProduct.tags" id="tags" placeholder="tags, separated by comma">
         </div>
         <div class="detail long-section">
           <!-- Wishlist boolean -->
@@ -108,8 +108,8 @@ export default {
         link: '',
         rating: 0,
         repurchase: 'no',
-        ingredients: [],
-        tags: []
+        ingredients: '',
+        tags: ''
       },
       wishlist: false,
       firebaseUser: firebase.auth().currentUser.email
@@ -129,6 +129,8 @@ export default {
           rating: String(this.newProduct.rating),
           repurchase: String(this.newProduct.repurchase),
           wishlist: String(this.wishlist),
+          ingredients: this.newProduct.ingredients,
+          tags: this.newProduct.tags,
           user: this.firebaseUser
         }
       }).then(data => {

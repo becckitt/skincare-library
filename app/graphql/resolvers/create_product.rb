@@ -8,6 +8,8 @@ class Resolvers::CreateProduct < GraphQL::Function
   argument :repurchase, !types.String
   argument :wishlist, !types.String
   argument :brand, !types.String
+  argument :ingredients, !types.String
+  argument :tags, !types.String
   argument :user, !types.String
   
   type Types::ProductType
@@ -26,7 +28,20 @@ class Resolvers::CreateProduct < GraphQL::Function
       repurchase:   args[:repurchase].downcase,
       wishlist:     args[:wishlist]
     )
-    
+
+    # create and add ingredients and tags to product
+    args[:ingredients].split(",").each do |ingredient|
+      ingredient_name = ingredient.strip
+      i = Ingredient.find_or_create_by(name: ingredient_name)
+      product.ingredients << i
+    end
+
+    args[:tags].split(",").each do |tag|
+      tag_name = tag.strip
+      t = Tag.find_or_create_by(name: tag_name)
+      product.tags << t
+    end
+
     product
   rescue ActiveRecord::RecordInvalid => e
     GraphQL::ExecutionError.new("Invalid input: #{e.record.errors.full_messages.join(', ')}")  
