@@ -16,11 +16,5 @@ class Resolvers::LoginUser < GraphQL::Function
     user = User.find_by(email: email)
 
     return unless user
-
-    # get token from firebase
-    # decrypt it according to firebase's reccs
-    # jwt has the user id info
-    # need to add a firebase_id column
-    # and check it against that
   end
 end
