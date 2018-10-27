@@ -16,7 +16,7 @@ class Resolvers::SignInUser < GraphQL::Function
     user = User.find_by email: input[:email]
     
     return unless user
-    return unless user.authenticate(input[:password])
+    return unless user.authenticate(input[:firebase_id])
 
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base.byteslice(0..31))
     token = crypt.encrypt_and_sign("user-id:#{ user.id }")

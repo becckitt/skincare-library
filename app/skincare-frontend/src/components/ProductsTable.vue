@@ -1,6 +1,5 @@
 <template>
   <div class="products-table">
-    <h3>Products</h3>
     <vue-good-table
       :columns="columns"
       :rows="products"

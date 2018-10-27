@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { WISHLIST_QUERY } from '@/constants/graphql'
+import { WishlistSearch } from '../graphql/queries/wishlist.graphql'
 
 export default {
   name: 'Wishlist',
@@ -21,7 +21,7 @@ export default {
   },
   apollo: {
     wishlistProducts: {
-      query: WISHLIST_QUERY,
+      query: WishlistSearch,
       update (data) {
         return data.wishlistSearch
       }

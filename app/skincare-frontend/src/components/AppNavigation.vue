@@ -1,6 +1,6 @@
 <template>
   <div class="nav-wrapper">
-    <div v-if="!currentUser" class="nav-inner-wrapper">
+    <div v-if="!currentUser" class="nav-wrapper-inner">
       <router-link to="/">Skincare Tracker</router-link>
       <router-link to="/login">Login</router-link>
       <router-link to="/signup">Signup</router-link>

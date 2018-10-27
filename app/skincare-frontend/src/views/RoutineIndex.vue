@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { ALL_ROUTINES_QUERY } from '@/constants/graphql'
+import { AllRoutines } from '../graphql/queries/routines.graphql'
 
 export default {
   name: 'Routines',
@@ -21,9 +21,9 @@ export default {
   },
   apollo: {
     routines: {
-      query: ALL_ROUTINES_QUERY,
+      query: AllRoutines,
       update (data) {
-        return data.routineSearch
+        return data.AllRoutines
       }
     }
   }

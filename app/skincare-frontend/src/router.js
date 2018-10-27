@@ -6,6 +6,7 @@ import AppSignup from '@/views/AppSignup'
 import Dashboard from '@/views/Dashboard'
 import BrandProducts from '@/views/BrandProducts'
 import ProductView from '@/views/ProductView'
+import CreateProduct from '@/views/CreateProduct'
 import IngredientView from '@/views/IngredientView'
 import TagView from '@/views/TagView'
 import RoutineView from '@/views/RoutineView'
@@ -69,6 +70,14 @@ let router = new Router({
       path: '/products/:id',
       name: 'product',
       component: ProductView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/product/new',
+      name: 'newProduct',
+      component: CreateProduct,
       meta: {
         requiresAuth: true
       }

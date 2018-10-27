@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import VueApollo from 'vue-apollo'
 import { createApolloClient, restartWebsockets } from 'vue-cli-plugin-apollo/graphql-client'
-import { HttpLink } from 'apollo-link-http'
-import { setContext } from 'apollo-link-context'
-import { InMemoryCache } from 'apollo-cache-inmemory'
 
 // Install the vue plugin
 Vue.use(VueApollo)
@@ -13,18 +10,10 @@ const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:3000/graphql'
+// Files URL root
+export const filesRoot = process.env.VUE_APP_FILES_ROOT || httpEndpoint.substr(0, httpEndpoint.indexOf('/graphql'))
 
-const httpLink = new HttpLink({
-  uri: 'http://localhost:3000/graphql'
-})
-
-const middlewareLink = setContext(() => ({
-  headers: {
-    authorization: `*`
-  }
-}))
-
-const link = middlewareLink.concat(httpLink)
+Vue.prototype.$filesRoot = filesRoot
 
 // Config
 const defaultOptions = {
@@ -41,13 +30,13 @@ const defaultOptions = {
   // You need to pass a `wsEndpoint` for this to work
   websocketsOnly: false,
   // Is being rendered on the server?
-  ssr: false,
+  ssr: false
 
   // Override default http link
-  link: link,
+  // link: myLink
 
   // Override default cache
-  cache: new InMemoryCache()
+  // cache: myCache
 
   // Override the way the Authorization header is set
   // getAuth: (tokenName) => ...
@@ -87,7 +76,9 @@ export function createProvider (options = {}) {
 
 // Manually call this when user log in
 export async function onLogin (apolloClient, token) {
-  localStorage.setItem(AUTH_TOKEN, token)
+  if (typeof localStorage !== 'undefined' && token) {
+    localStorage.setItem(AUTH_TOKEN, token)
+  }
   if (apolloClient.wsClient) restartWebsockets(apolloClient.wsClient)
   try {
     await apolloClient.resetStore()
@@ -99,7 +90,9 @@ export async function onLogin (apolloClient, token) {
 
 // Manually call this when user log out
 export async function onLogout (apolloClient) {
-  localStorage.removeItem(AUTH_TOKEN)
+  if (typeof localStorage !== 'undefined') {
+    localStorage.removeItem(AUTH_TOKEN)
+  }
   if (apolloClient.wsClient) restartWebsockets(apolloClient.wsClient)
   try {
     await apolloClient.resetStore()

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { INGREDIENT_SEARCH_QUERY } from '@/constants/graphql'
+import { IngredientSearch } from '../graphql/queries/ingredients.graphql'
 
 export default {
   name: 'IngredientView',
@@ -22,14 +22,14 @@ export default {
   },
   apollo: {
     ingredientProducts: {
-      query: INGREDIENT_SEARCH_QUERY,
+      query: IngredientSearch,
       variables () {
         return {
           filter: this.queryParam
         }
       },
       update (data) {
-        return data.ingredientSearch[0]
+        return data.IngredientSearch[0]
       }
     }
   },

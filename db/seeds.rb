@@ -11,10 +11,10 @@ honey_ceramide_ingredients = ["Honey extract", "butylene glycol", "glycerin", "c
 snail_mucin_tags = ["hydrating", "antimicrobial", "repairing"]
 klairs_toner_tags = ["hydrating", "essential oils", "brightening"]
 
-user1 = User.new(email: "hello@nothanks.com", username: 'user1', password: '123456')
+user1 = User.new(email: "hello@nothanks.com", firebase_id: '43543nmenw432')
 user1.save!
 
-user2 = User.new(email: "testing@example.com", username: 'user2', password: '654321')
+user2 = User.new(email: "testing@example.com", firebase_id: 'fdsjhkh3432re2')
 user2.save!
 
 shelf = Shelf.create!
