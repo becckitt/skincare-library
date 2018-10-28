@@ -7,6 +7,7 @@ import firebase from 'firebase'
 import { createProvider } from './vue-apollo'
 import './assets/stylesheets/main.css'
 import axios from 'axios'
+import {ClientTable} from 'vue-tables-2'
 let userToken
 
 let app
@@ -18,6 +19,8 @@ Vue.http = Vue.prototype.$http = axios.create({
     'Authorization': userToken || ''
   }
 })
+
+Vue.use(ClientTable, {pagination: { dropdown: false }}, false, 'bootstrap3', 'default')
 
 const config = {
   apiKey: 'AIzaSyByet0rN7obtN6XkgHyU1n_MDMQm_ii668',

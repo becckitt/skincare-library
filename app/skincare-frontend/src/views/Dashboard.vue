@@ -70,15 +70,6 @@ a {
 
   &:hover {
     background: #e2e1e1;
-    animation: bounce .3s infinite alternate;
-  }
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  } to {
-    transform: translateY(-2px);
   }
 }
 </style>
