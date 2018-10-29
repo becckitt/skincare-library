@@ -6,8 +6,9 @@
       <router-link to="/signup">Signup</router-link>
     </div>
     <div v-else class="nav-wrapper-inner">
-      <router-link to="/dashboard">Skincare Tracker</router-link>
-      <router-link to="/routines">Routines</router-link>
+      <router-link :to="dashboard">Skincare Tracker</router-link>
+      <router-link :to="routines">Routines</router-link>
+      <router-link :to="wishlist">Wishlist</router-link>
       <button @click="logout">Logout</button>
     </div>
   </div>
