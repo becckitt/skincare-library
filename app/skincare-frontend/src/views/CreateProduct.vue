@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import { CreateProduct } from '../graphql/mutations/create_product.graphql'
+import { CreateProduct } from '../graphql/mutations/products.graphql'
 import firebase from 'firebase'
 import 'firebase/auth'
 
