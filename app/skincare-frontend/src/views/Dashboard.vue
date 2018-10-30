@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-wrapper">
+  <div class="main-wrapper large">
     <div class="table-header">
       <h1>Products in your shelf</h1>
       <router-link :to="{name: 'newProduct'}">Add a product --></router-link>
@@ -35,12 +35,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.dashboard-wrapper {
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 .table-header {
   display: flex;
   justify-content: space-between;
