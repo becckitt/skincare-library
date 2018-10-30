@@ -27,8 +27,18 @@ a {
   padding: 0 15px;
 }
 
+.main-wrapper.large {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 th, td {
   margin-right: 10px;
+}
+
+.products-table {
+  text-align: left;
 }
 
 .products-table table {

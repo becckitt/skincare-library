@@ -3,5 +3,6 @@ query WishlistSearch {
     id
     name
     comment
+    link
   }
 }

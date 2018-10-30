@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="main-wrapper large">
     <h1>Products in Wishlist</h1>
-    <div v-for="product in wishlistProducts" :key="product.id">
-      <h4>{{product.name}}</h4>
-      <p>{{product.comment}}</p>
-      <router-link :to="{name: 'product', params: { id: product.id }}">View product</router-link>
+    <div class="products-table">
+      <v-client-table
+        :data="wishlistProducts"
+        :columns="columns">
+        <a slot="link" slot-scope="props" v-bind:href="props.row.link">Link</a>
+      </v-client-table>
     </div>
   </div>
 </template>
@@ -16,7 +18,8 @@ export default {
   name: 'Wishlist',
   data () {
     return {
-      wishlistProducts: []
+      wishlistProducts: [],
+      columns: ['name', 'comment', 'link']
     }
   },
   apollo: {

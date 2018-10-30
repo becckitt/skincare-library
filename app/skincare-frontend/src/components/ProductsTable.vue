@@ -16,9 +16,7 @@ export default {
   name: 'ProductsTable',
   data () {
     return {
-      columns: ['brand', 'name', 'product_type', 'comment', 'rating', 'actions'],
-      options: {
-      }
+      columns: ['brand', 'name', 'product_type', 'comment', 'rating', 'actions']
     }
   },
   props: {
@@ -29,9 +27,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.products-table {
-  text-align: left;
-}
-</style>
