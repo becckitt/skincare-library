@@ -120,18 +120,20 @@ export default {
       this.$apollo.mutate({
         mutation: CreateProduct,
         variables: {
-          name: this.newProduct.name,
-          comment: this.newProduct.comment,
-          brand: this.newProduct.brand,
-          product_type: this.newProduct.type,
-          price_cents: this.newProduct.price,
-          link: this.newProduct.link,
-          rating: String(this.newProduct.rating),
-          repurchase: String(this.newProduct.repurchase),
-          wishlist: String(this.wishlist),
-          ingredients: this.newProduct.ingredients,
-          tags: this.newProduct.tags,
-          user: this.firebaseUser
+          input: {
+            name: this.newProduct.name,
+            comment: this.newProduct.comment,
+            brand: this.newProduct.brand,
+            product_type: this.newProduct.type,
+            price_cents: this.newProduct.price,
+            link: this.newProduct.link,
+            rating: String(this.newProduct.rating),
+            repurchase: String(this.newProduct.repurchase),
+            wishlist: String(this.wishlist),
+            ingredients: this.newProduct.ingredients,
+            tags: this.newProduct.tags,
+            user: this.firebaseUser
+          }
         }
       }).then(data => {
         const productId = data.data.createProduct.id
