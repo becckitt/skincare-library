@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <button v-on:click="addProduct()">Add product --></button>
+      <button v-on:click="addProduct()" class="product-button">Add product --></button>
     </form>
   </div>
 </template>
@@ -165,32 +165,6 @@ label {
   font-weight: bold;
   padding-right: 5px;
   display: block;
-}
-
-button {
-  border: 2px solid black;
-  border-radius: 0;
-  padding: 15px;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: bold;
-  font-size: 14px;
-  background: transparent;
-
-  &:before {
-    content: '';
-    position: absolute;
-    height: 53px;
-    width: 160px;
-    background: #fdd6e3;
-    z-index: -10;
-    margin: -12px -22px;
-  }
-
-  &:hover {
-    &::before {
-      background: #f7adc5;
-    }
-  }
 }
 
 .checkbox-section {
