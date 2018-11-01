@@ -126,9 +126,9 @@ export default {
             product_type: this.product.product_type,
             price_cents: this.product.price_cents,
             link: this.product.link,
-            rating: String(this.product.rating),
+            rating: this.product.rating,
             repurchase: this.product.repurchase,
-            wishlist: String(this.wishlist),
+            wishlist: this.wishlist,
             ingredients: this.productIngredients,
             tags: this.productTags,
             user: this.firebaseUser

@@ -16,7 +16,7 @@
       </div>
       <div class="detail">
         <p class="detail-label">Rating</p>
-        <p> {{ product.rating }} </p>
+        <p> {{ product.rating }}/10 </p>
       </div>
       <div class="detail">
         <p class="detail-label">Re-buy?</p>

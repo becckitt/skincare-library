@@ -6,42 +6,42 @@
         <div class="detail">
           <!-- Name -->
           <label for="product-name">Name:</label>
-          <input v-model="newProduct.name" id="product-name" placeholder="name of product (required)" required>
+          <input v-model="product.name" id="product-name" placeholder="name of product (required)" required>
         </div>
         <div class="detail">
           <!-- Brand -->
           <label for="brand-name">Brand:</label>
-          <input v-model="newProduct.brand" id="brand-name" placeholder="name of brand (required)" required>
+          <input v-model="product.brand" id="brand-name" placeholder="name of brand (required)" required>
         </div>
         <div class="detail">
           <!-- Product type -->
           <label for="product-type">Product type:</label>
-          <input v-model="newProduct.type" id="product-type" placeholder="type of product">
+          <input v-model="product.product_type" id="product-type" placeholder="type of product">
         </div>
         <div class="detail">
           <!-- Product comment -->
           <label for="product-comment">Comments:</label>
-          <input v-model="newProduct.comment" id="product-comment" placeholder="comments, notes, etc">
+          <input v-model="product.comment" id="product-comment" placeholder="comments, notes, etc">
         </div>
         <div class="detail">
           <!-- Product link -->
           <label for="product-link">Product link:</label>
-          <input v-model="newProduct.link" id="product-link" placeholder="link to product">
+          <input v-model="product.link" id="product-link" placeholder="link to product">
         </div>
         <div class="detail">
           <!-- Price cents -->
           <label for="price">Price:</label>
-          <input v-model="newProduct.price" id="price" placeholder="price in 00.00">
+          <input v-model="product.price_cents" id="price" placeholder="price in 00.00">
         </div>
         <div class="detail">
           <!-- ingredients -->
           <label for="ingredients">Ingredients:</label>
-          <input v-model="newProduct.ingredients" id="ingredients" placeholder="ingredients, separated by comma">
+          <input v-model="product.ingredients" id="ingredients" placeholder="ingredients, separated by comma">
         </div>
         <div class="detail">
           <!-- tags -->
           <label for="tags">Tags:</label>
-          <input v-model="newProduct.tags" id="tags" placeholder="tags, separated by comma">
+          <input v-model="product.tags" id="tags" placeholder="tags, separated by comma">
         </div>
         <div class="detail long-section">
           <!-- Wishlist boolean -->
@@ -57,10 +57,10 @@
           <div>
             <label for="repurchase">Repurchase?</label>
             <div class="styled-select">
-              <select v-model="newProduct.repurchase" id="repurchase">
-                <option>Yes</option>
-                <option>No</option>
-                <option>Maybe</option>
+              <select v-model="product.repurchase" id="repurchase">
+                <option selected>yes</option>
+                <option>no</option>
+                <option>maybe</option>
               </select>
             </div>
           </div>
@@ -68,7 +68,8 @@
           <div>
             <label for="rating">Rating:</label>
             <div class="styled-select">
-              <select v-model="newProduct.rating" id="rating">
+              <select v-model="product.rating" id="rating">
+                <option selected>0</option>
                 <option v-for="i in 10" v-bind:key="i">{{ i }}</option>
               </select>
             </div>
@@ -89,15 +90,15 @@ export default {
   name: 'CreateProduct',
   data () {
     return {
-      newProduct: {
+      product: {
         name: '',
         comment: '',
         brand: '',
         type: '',
-        price: '0.00',
+        price_cents: 0.00,
         link: '',
         rating: 0,
-        repurchase: 'no',
+        repurchase: 'yes',
         ingredients: '',
         tags: ''
       },
@@ -111,17 +112,17 @@ export default {
         mutation: CreateProduct,
         variables: {
           input: {
-            name: this.newProduct.name,
-            comment: this.newProduct.comment,
-            brand: this.newProduct.brand,
-            product_type: this.newProduct.type,
-            price_cents: this.newProduct.price,
-            link: this.newProduct.link,
-            rating: String(this.newProduct.rating),
-            repurchase: String(this.newProduct.repurchase),
-            wishlist: String(this.wishlist),
-            ingredients: this.newProduct.ingredients,
-            tags: this.newProduct.tags,
+            name: this.product.name,
+            comment: this.product.comment,
+            brand: this.product.brand,
+            product_type: this.product.type,
+            price_cents: parseFloat(this.product.price_cents),
+            link: this.product.link,
+            rating: this.product.rating,
+            repurchase: this.product.repurchase,
+            wishlist: this.wishlist,
+            ingredients: this.product.ingredients,
+            tags: this.product.tags,
             user: this.firebaseUser
           }
         }
