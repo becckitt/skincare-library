@@ -41,6 +41,8 @@
         </p>
       </div>
     </div>
+
+    <router-link :to="{name: 'editProduct', params: { id: product.id }}" class="product-button">Edit product</router-link>
   </div>
 </template>
 <script>

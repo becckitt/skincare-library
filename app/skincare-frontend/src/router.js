@@ -7,6 +7,7 @@ import Dashboard from '@/views/Dashboard'
 import BrandProducts from '@/views/BrandProducts'
 import ProductView from '@/views/ProductView'
 import CreateProduct from '@/views/CreateProduct'
+import EditProduct from '@/views/EditProduct'
 import IngredientView from '@/views/IngredientView'
 import TagView from '@/views/TagView'
 import RoutineView from '@/views/RoutineView'
@@ -78,6 +79,14 @@ let router = new Router({
       path: '/product/new',
       name: 'newProduct',
       component: CreateProduct,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/products/:id/edit',
+      name: 'editProduct',
+      component: EditProduct,
       meta: {
         requiresAuth: true
       }

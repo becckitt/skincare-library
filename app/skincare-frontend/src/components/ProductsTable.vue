@@ -5,7 +5,10 @@
       :columns="columns">
       <div slot="brand" slot-scope="props"><router-link :to="{ name: 'brand', params: { brandName: props.row.brand.name }}">{{ props.row.brand.name }}</router-link></div>
       <div slot="price_cents" slot-scope="props">${{ props.row.price_cents }}</div>
-      <div slot="actions" slot-scope="props"><router-link :to="{name: 'product', params: { id: props.row.id }}">View</router-link></div>
+      <div slot="actions" slot-scope="props">
+        <router-link :to="{name: 'product', params: { id: props.row.id }}">View</router-link>
+        <router-link :to="{name: 'editProduct', params: { id: props.row.id }}"> | Edit</router-link>
+      </div>
     </v-client-table>
   </div>
 </template>
