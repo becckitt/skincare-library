@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_14_044112) do
+ActiveRecord::Schema.define(version: 2018_11_01_051229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_044112) do
     t.string "name"
     t.text "comment"
     t.integer "rating"
-    t.integer "price_cents", default: 0, null: false
+    t.float "price_cents", default: 0.0, null: false
     t.string "price_currency", default: "USD", null: false
     t.text "link"
     t.integer "repurchase"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_09_14_044112) do
     t.integer "brand_id"
     t.integer "user_id"
     t.integer "routine_id"
+    t.integer "shelf_id"
   end
 
   create_table "products_routines", force: :cascade do |t|
@@ -76,6 +77,11 @@ ActiveRecord::Schema.define(version: 2018_09_14_044112) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "time_of_day"
+  end
+
+  create_table "shelves", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
