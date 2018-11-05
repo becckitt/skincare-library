@@ -1,4 +1,4 @@
-ProductInput = GraphQL::InputObjectType.define do
+Inputs::ProductInput = GraphQL::InputObjectType.define do
   name 'ProductInput'
 
   argument :name, !types.String

@@ -140,7 +140,7 @@ export default {
       })
     },
     pluckNames (items) {
-      return pluck(items, 'name').join(", ")
+      return pluck(items, 'name').join(',')
     }
   }
 }

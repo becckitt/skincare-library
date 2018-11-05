@@ -1,5 +1,5 @@
 class Resolvers::CreateProduct < GraphQL::Function
-  argument :input, ProductInput
+  argument :input, Inputs::ProductInput
   
   type Types::ProductType
 
